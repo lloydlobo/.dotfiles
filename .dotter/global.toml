@@ -4,8 +4,17 @@
 depends = []
 
 [default.files]
+gitconfig = { target = "~/.gitconfig", type = "template" }
+tmux = { target = "~/.tmux.conf", type = "template" }
+bashrc = { target = "~/.bashrc", type = "template" }
 zshrc = { target = "~/.zshrc", type = "template" }
+cargo = { target = "~/.cargo/config", type = "template" }
+fish = { target = "~/.config/fish/config.fish", type = "template" }
 bat = { target = "~/.config/bat/config", type = "template" }
+alacritty = { target = "~/.config/alacritty/alacritty.yml", type = "template" }
+starship = { target = "~/.config/starship.toml", type = "template" }
+nvim = { target = "~/.config/nvim/lua/user/init.lua", type = "template" }
+ripgrep = { type = "symbolic", target = "~/.ripgreprc", if = '(is_executable "rg")'}
 
 # dotter = ""
 # zprofile = ""
