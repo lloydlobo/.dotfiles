@@ -2,6 +2,7 @@
 
 DOTTER
 - [ ] https://github.com/SuperCuber/dotter/wiki/Setup-and-Configuration
+> When installing, I recommend downloading the binaries (windows and linux) into the root of your repository.
 
 ## Inspiration
 
