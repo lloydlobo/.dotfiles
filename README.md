@@ -39,11 +39,12 @@ DOTTER
 - [ ] AstroNvim
 - [ ] hyperfine
 - [ ] tokei
-- [ ] 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ] bandwhich X
+- [ ] ranger
+- [ ] zoxide
+- [ ] delta
+- [ ] grex
+- [ ] gnome tweaks
+- [ ] neovide
+- [ ] alacritty
 
