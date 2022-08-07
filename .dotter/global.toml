@@ -4,9 +4,10 @@
 depends = []
 
 [default.files]
-bat = "~/.config/bat/config"
+zshrc = { target = "~/.zshrc", type = "template" }
+bat = { target = "~/.config/bat/config", type = "template" }
+
 # dotter = ""
 # zprofile = ""
-zshrc = "~/.zshrc"
-
+# zshrc = "~/.zshrc"
 [default.variables]
