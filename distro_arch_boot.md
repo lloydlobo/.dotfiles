@@ -8,7 +8,11 @@
   - Source: https://bbs.archlinux.org/viewtopic.php?id=257356
 - VMTools
 
+## Instal Log
+
+/var/log/archinstall/install.log
 ### Pacman
 
 - neofetch
 - $ xrandr -s 1920x1080 # resize vm
+- git clone astronvim
