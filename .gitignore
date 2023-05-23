@@ -1,0 +1,8 @@
+*.swp
+.env
+.keep
+./nvim/.config/nvim/plugin/packer_compiled.lua
+personal/
+
+tmux/.config/tmux/tmux.conf.bak.nix
+tmux/.config/tmux/tmux.conf.bak.primeshell

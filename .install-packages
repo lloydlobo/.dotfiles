@@ -1,0 +1,8 @@
+git
+wget
+curl
+vim
+nvim
+ripgrep
+fzf
+zoxide

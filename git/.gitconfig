@@ -1,0 +1,66 @@
+[user]
+	name = Lloyd Lobo
+	email = lloydlobo4@gmail.com
+
+[alias]
+	ad = add .
+	br = branch
+	ba = branch -a
+	bm = branch --merged
+	bn = branch --no-merged
+	ci = commit
+	co = checkout
+	d = diff
+	dump = cat-file -p
+	hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+	lo = log --oneline -n 15
+	llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+	st = status
+	type = cat-file -t
+	up = pull --rebase
+	re = restore
+	# edit conflicted file on merge
+	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+	# add conflicted file on merge
+	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+[push]
+	default = current
+[rebase]
+	autoStash = true
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+
+# git-delta
+[core]
+    pager = delta
+    editor = nvim
+    ignorecase = false
+    excludesfile = ~/.gitignore
+
+[interactive]
+    diffFilter = delta --color-only
+[add.interactive]
+    # useBuiltin = false # required for git 2.37.0 BUT removed now.
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+# GHQ - Git repository local management tool
+[ghq]
+  root = ~/.ghq
+  vcs = git

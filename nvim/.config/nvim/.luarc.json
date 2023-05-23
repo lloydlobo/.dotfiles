@@ -1,0 +1,11 @@
+{
+    "diagnostics.disable": [
+        "assign-type-mismatch"
+    ],
+    "workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/home/lloyd/.config/nvim/lua",
+        "/home/lloyd/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/01fb121f",
+        "/home/lloyd/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/73da9f27"
+    ]
+}
