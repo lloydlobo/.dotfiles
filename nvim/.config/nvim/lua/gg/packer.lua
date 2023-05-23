@@ -127,4 +127,5 @@ return require('packer').startup(function(use)
     --use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim") --  overlay *'s (or any other character) over defined patterns in defined files. It also disables 'cmp' for the buffer(if it is installed).
+    use('wakatime/vim-wakatime')
 end)                         -- `:so` Shoutout! (source the file) -> `:PackerSync`
