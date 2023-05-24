@@ -13,8 +13,8 @@ echo "resolution set to ${resolution}"
 #setxkbmap -option 'grp:alt_shift_toggle'
 
 ## Start process.
-# `picom` to reduce screen tearing.
-picom --config ~/.config/picom/picom.conf -b
+# `picom` to reduce screen tearing. with `-b` daemonize flag.
+picom --backend xrender --config ~/.config/picom/picom.conf -b
 
 # `dunst` notification daemon.
 dunst -config ~/.config/dunst/dunstrc &

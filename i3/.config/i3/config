@@ -20,6 +20,8 @@
 # - set xrandr to fit fullscreen when on VirtualBox.
 exec_always --no-startup-id ~/.config/i3/autostart.sh
 
+#exec picom --experimental-backends --config ~/.config/picom/picom.conf
+
 # reload i3 config and run $ i3-msg reload
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper/*

@@ -118,11 +118,11 @@ return require('packer').startup(function(use)
     use({ "JoosepAlviste/nvim-ts-context-commentstring", })
 
 
-    use({
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    })
+    --use({
+    --    -- Set lualine as statusline
+    --    'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
+    --    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    --})
     use("folke/zen-mode.nvim")
     --use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
