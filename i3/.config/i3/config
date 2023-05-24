@@ -30,9 +30,9 @@ exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper/*
 # I put exec --no-startup-id redshift -O 5000
 # Start redshift with i3. Its like flux for screen brightness.
 # redshift with icon
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
 # redshift without icon?
-#exec --no-startup-id redshift -t 5700:3600
+exec --no-startup-id redshift -t 5700:3600
 
 # Set up Conky
 # Conky is a useful way to show information about your system on the screen.
@@ -117,7 +117,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec alacritty
 
 # start a terminator by pressing Mod key + x or ENTER
 #set $terminator alacritty
@@ -410,7 +409,7 @@ for_window [instance=notepad] sticky enable
 # use window title, but no border
 bindsym $mod+t border normal 0
 # use no window title and a thick border
-# bindsym $mod+y border pixel 3
+bindsym $mod+y border pixel 3
 # use window title *and* a thick border
 # bindsym $mod+y border normal 3
 # use neither window title nor border
@@ -418,7 +417,9 @@ bindsym $mod+t border normal 0
 # no border on VLC
 # for_window [class="vlc"] border none
 
+#
 # scratchpad
+#
 # Note: use $mod+shift+<spacebar> to toggle selected windows scratchpad mode off
 
 # Make the currently focused window a scratchpad
@@ -443,8 +444,9 @@ client.background       #333443
 bar {
   i3bar_command i3bar --transparency
   colors {
-    background #33344388
-    statusline #444554
+    background #33344399
+    statusline #aaaaaa
+    #statusline #444554
     separator  #444554
 
     focused_workspace  #83CAFA50 #51A2DA50 #FFFFFF
