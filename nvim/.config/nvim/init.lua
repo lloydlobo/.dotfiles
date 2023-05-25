@@ -51,6 +51,7 @@ require("gg")
 -- - unlike quitting `:q or ZZ` `noautocmd` is not required, it just makes vim /neovim quit faster.
 -- - `:set more | verbose function {function_name}` shows location and content of functions.
 --
+-- ## nvim --startuptime time_cost.txt time_cost.txt
 
 ---
 --- # GIT REFERENCES
