@@ -114,6 +114,8 @@ return require('packer').startup(function(use)
         }
     })
 
+    use({ 'mfussenegger/nvim-dap' })
+
     -- comments
     use({ "JoosepAlviste/nvim-ts-context-commentstring", })
 
