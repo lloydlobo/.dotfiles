@@ -20,6 +20,8 @@ vim.opt.backup = false                                 -- So you can use `undotr
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Long running undos for days.
 vim.opt.undofile = true
 
+vim.opt.ignorecase = true -- use /\Cexample (for case-sensitive search)
+
 vim.opt.hlsearch = false      -- Removes highlighting after searching a keyword.
 vim.opt.incsearch = true      -- Guides highlighting while you type.
 
