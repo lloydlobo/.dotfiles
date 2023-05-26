@@ -56,15 +56,11 @@ esac
 # Run '/home/lloyd/.deno/bin/deno --help' to get started
 # region_end: deno
 
-# FZF VIM OPENER
-# @source https://edward-rees.com/terminal-tricks/
+# FZF VIM OPENER @source https://edward-rees.com/terminal-tricks/
+# `-m` multi-select with tab/shift-tab
 function __fsel_files() {
   setopt localoptions pipefail no_aliases 2> /dev/null
-  #eval find ./ -type f -not -path '*/.git/*' -print | fzf -m "$@" | while read item; do
-  # if git repository:
-  # git ls-files
- # eval find ./ -type f -print | fzf -m "$@" | while read item; do
- eval fd | fzf -m "$!" | while read item; do
+  eval fd | fzf -m "$!" | while read item; do
     echo -n "${(q)item} "
   done
   local ret=$?
@@ -85,6 +81,22 @@ function fzf-vim {
 zle -N fzf-vim
 bindkey "^v" fzf-vim
 
+function pf() {
+  local file_list
+  if command -v fd >/dev/null; then
+    file_list=$(fd .)
+  else
+    file_list=$(find ./ -type f -print)
+  fi
+
+  echo "$file_list" | fzf --preview='less {}' \
+    --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down,shift-up:preview-page-up,shift-down:preview-page-down \
+    --preview-window=right,70% \
+    --bind='enter:execute($EDITOR {})'
+}
+
+zle -N pf
+bindkey "^f" pf
 
 # It's worth noting that zsh has its own built-in correction mechanism called correct. You can enable it by adding the following line to your .zshrc file:
 #
