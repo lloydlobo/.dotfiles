@@ -81,22 +81,43 @@ function fzf-vim {
 zle -N fzf-vim
 bindkey "^v" fzf-vim
 
-function pf() {
+#function pf() {
+#  local file_list
+#  if command -v fd >/dev/null; then
+#    file_list=$(fd .)
+#  else
+#    file_list=$(find ./ -type f -print)
+#  fi
+#  local preview_cmd="bat --color=always {}"
+#  if ! command -v bat >/dev/null; then
+#    preview_cmd="less -R {}"
+#  fi
+#  echo "$file_list" | fzf --preview="$preview_cmd" \
+#    --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down,shift-up:preview-page-up,shift-down:preview-page-down \
+#    --preview-window=right,70% \
+#    --bind='enter:execute($EDITOR {})'
+#}
+#zle -N pf
+#bindkey "^f" pf
+
+function fzf_preview_edit() {
   local file_list
   if command -v fd >/dev/null; then
-    file_list=$(fd .)
+    file_list=$(fd --hidden --no-ignore)
   else
     file_list=$(find ./ -type f -print)
   fi
-
-  echo "$file_list" | fzf --preview='less {}' \
+#  local preview_cmd="bat --color=always {}"
+#  if ! command -v bat >/dev/null; then preview_cmd="less -R {}" fi
+  echo "$file_list" | fzf --preview='[ -d {} ] && less {} || bat --color=always {}' \
     --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down,shift-up:preview-page-up,shift-down:preview-page-down \
     --preview-window=right,70% \
     --bind='enter:execute($EDITOR {})'
 }
 
-zle -N pf
-bindkey "^f" pf
+zle -N fzf_preview_edit
+bindkey "^f" fzf_preview_edit
+
 
 # It's worth noting that zsh has its own built-in correction mechanism called correct. You can enable it by adding the following line to your .zshrc file:
 #
