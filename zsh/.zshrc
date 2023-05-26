@@ -56,6 +56,11 @@ esac
 # Run '/home/lloyd/.deno/bin/deno --help' to get started
 # region_end: deno
 
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# ~/.config/tmux/plugins
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
 # FZF VIM OPENER @source https://edward-rees.com/terminal-tricks/
 # `-m` multi-select with tab/shift-tab
 function __fsel_files() {
