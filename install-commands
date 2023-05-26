@@ -1,7 +1,11 @@
 sudo dnf install alacritty
 sudo dnf install dunst
 sudo dnf install git
-sudo dnf install i3
+sudo dnf install fzf
+sudo dnf install curl
+sudo dnf install wget
+sudo dnf install gh
+sudo dnf install picom
 
 sudo dnf install -y neovim python3-neovim
 
@@ -9,5 +13,12 @@ cargo install starship
 carg install zellij
 cargo install btm
 cargo install broot
+cargo install bat
+cargo install tealdeer
+cargo install fd
+cargo install miniserve
+cargo install zoxide
+cargo install tokei
+cargo install kondo
 
 pip install httpie
