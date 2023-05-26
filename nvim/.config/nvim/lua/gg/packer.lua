@@ -10,6 +10,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim') -- vim.cmd [[packadd packer.nvim]]
 
+-- TODO: Implement Debugging with dap and friends.
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -115,7 +116,16 @@ return require('packer').startup(function(use)
         }
     })
 
-    use({ 'mfussenegger/nvim-dap' })
+    use({
+        'mfussenegger/nvim-dap',
+        requires = {
+            'rcarriga/nvim-dap-ui',    -- Creates a beautiful debugger UI
+            'williamboman/mason.nvim', -- Installs the debug adapters for you
+            'jay-babu/mason-nvim-dap.nvim',
+            'leoluz/nvim-dap-go',      -- Add your own debuggers here
+        }
+    })
+    use({ 'theHamsta/nvim-dap-virtual-text' }) -- This plugin adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions.
 
     -- comments
     use({ "JoosepAlviste/nvim-ts-context-commentstring", })
