@@ -1,0 +1,13 @@
+sudo dnf install alacritty
+sudo dnf install dunst
+sudo dnf install git
+sudo dnf install i3
+
+sudo dnf install -y neovim python3-neovim
+
+cargo install starship
+carg install zellij
+cargo install btm
+cargo install broot
+
+pip install httpie
