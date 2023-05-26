@@ -60,7 +60,7 @@ esac
 # `-m` multi-select with tab/shift-tab
 function __fsel_files() {
   setopt localoptions pipefail no_aliases 2> /dev/null
-  eval fd | fzf -m "$!" | while read item; do
+  eval fd --hidden | fzf -m "$!" | while read item; do
     echo -n "${(q)item} "
   done
   local ret=$?
@@ -81,25 +81,7 @@ function fzf-vim {
 zle -N fzf-vim
 bindkey "^v" fzf-vim
 
-#function pf() {
-#  local file_list
-#  if command -v fd >/dev/null; then
-#    file_list=$(fd .)
-#  else
-#    file_list=$(find ./ -type f -print)
-#  fi
-#  local preview_cmd="bat --color=always {}"
-#  if ! command -v bat >/dev/null; then
-#    preview_cmd="less -R {}"
-#  fi
-#  echo "$file_list" | fzf --preview="$preview_cmd" \
-#    --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down,shift-up:preview-page-up,shift-down:preview-page-down \
-#    --preview-window=right,70% \
-#    --bind='enter:execute($EDITOR {})'
-#}
-#zle -N pf
-#bindkey "^f" pf
-
+# FIXME: Create new buffer,as fzf is still running in bg when suspending session to background using <C-z>.
 function fzf_preview_edit() {
   local file_list
   if command -v fd >/dev/null; then
