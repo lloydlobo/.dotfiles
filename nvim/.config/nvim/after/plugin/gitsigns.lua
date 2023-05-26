@@ -67,8 +67,10 @@ require('gitsigns').setup {
         -- Actions
         map('n', '<leader>hs', gs.stage_hunk, { desc = "[h]unk [s]tage @gitsigns" })
         map('n', '<leader>hr', gs.reset_hunk, { desc = "[h]unk [r]eset @gitsigns" })
-        map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end, { desc = "[h]unk [s]tage --VISUAL-- @gitsigns" })
-        map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end, { desc = "[h]unk [r]eset --VISUAL-- @gitsigns" })
+        map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end,
+            { desc = "[h]unk [s]tage --VISUAL-- @gitsigns" })
+        map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end,
+            { desc = "[h]unk [r]eset --VISUAL-- @gitsigns" })
 
         map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "[u]ndo stage [h]unk @gitsigns" })
         map('n', '<leader>hp', gs.preview_hunk, { desc = "[p]review [h]unk @gitsigns" })
@@ -76,14 +78,17 @@ require('gitsigns').setup {
         map('n', '<leader>hS', gs.stage_buffer, { desc = "[S]tage all [h]unks in buffer @gitsigns" })
         map('n', '<leader>hR', gs.reset_buffer, { desc = "[r]eset [b]uffer @gitsigns" })
 
-        map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = "[b]lame line [h]unk hover float @gitsigns" })
-        map('n', '<leader>htb', gs.toggle_current_line_blame, { desc = "[t]oggle current line [h]unk [b]lame @gitsigns" })
+        map('n', '<leader>hb', function() gs.blame_line { full = true } end,
+            { desc = "[b]lame line [h]unk hover float @gitsigns" })
 
         map('n', '<leader>hd', gs.diffthis, { desc = "[d]iff this [h]unk @gitsigns" })
         map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "[D]iff this '~' [h]unk @gitsigns" })
 
+        map('n', '<leader>hts', gs.toggle_signs, { desc = "[h]unk [t]oggle [s]igns @gitsigns" })
         map('n', '<leader>htw', gs.toggle_word_diff, { desc = "[t]oggle all [h]unks [w]ord diff @gitsigns" })
         map('n', '<leader>htd', gs.toggle_deleted, { desc = "[t]oggle [d]eleted [h]unks @gitsigns" })
+        map('n', '<leader>htb', gs.toggle_current_line_blame, { desc = "[t]oggle current line [h]unk [b]lame @gitsigns" })
+
 
         -- Text object
         -- FIXME: Does this work, or how?

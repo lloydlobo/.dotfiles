@@ -57,8 +57,8 @@ return require('packer').startup(function(use)
     --        { 'nvim-treesitter/nvim-treesitter-textobjects', },
     --    }
     --})
-    use('nvim-treesitter/playground')    -- `TSPlaygroundToggle` -> (view AST).
-    use('ThePrimeagen/harpoon')          -- Getting you where you want with the fewest keystrokes.
+    use('nvim-treesitter/playground') -- `TSPlaygroundToggle` -> (view AST).
+    use('ThePrimeagen/harpoon')       -- Getting you where you want with the fewest keystrokes.
     --use({
     --    "ThePrimeagen/refactoring.nvim", -- The Refactoring library based off the Refactoring book by Martin Fowler
     --    requires = {
@@ -89,11 +89,12 @@ return require('packer').startup(function(use)
                     { 'williamboman/mason.nvim',          run = function() pcall(vim.cmd, 'MasonUpdate') end, }, -- Optional
                     { 'williamboman/mason-lspconfig.nvim' },                                                     -- Optional
 
-                    { 'folke/neodev.nvim', },                                                                    -- Additional lua configuration, makes nvim stuff amazing!
-                    -- Useful status updates for LSP
-                    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+                    -- Useful status updates for LSP -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
                     { 'j-hui/fidget.nvim',                opts = {} },
-                }, -- Required
+
+                    -- Additional lua configuration, make nvim stuff amazing!
+                    { 'folke/neodev.nvim', }, -- Additional lua configuration, makes nvim stuff amazing!
+                },                            -- Required
             },
 
             -- Autocompletion
@@ -118,6 +119,15 @@ return require('packer').startup(function(use)
 
     -- comments
     use({ "JoosepAlviste/nvim-ts-context-commentstring", })
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
 
 
     --use({
