@@ -10,15 +10,15 @@ sudo dnf install picom
 sudo dnf install -y neovim python3-neovim
 
 cargo install starship
-carg install zellij
-cargo install btm
-cargo install broot
 cargo install bat
-cargo install tealdeer
+cargo install broot
+cargo install btm
 cargo install fd
-cargo install miniserve
-cargo install zoxide
-cargo install tokei
 cargo install kondo
+cargo install miniserve
+cargo install tealdeer
+cargo install tokei
+cargo install zellij
+cargo install zoxide
 
 pip install httpie

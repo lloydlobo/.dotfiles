@@ -72,7 +72,13 @@ return require('packer').startup(function(use)
     -- Git related plugins.
     use('tpope/vim-fugitive')
     use('tpope/vim-rhubarb')
+    use("rhysd/committia.vim") -- splits git commit to edit,status,diff windows.
+    use({
+        'ruifm/gitlinker.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+    })
 
+    use({ 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', })
     -- Detect tabstop and shiftwidth automatically.
     use('tpope/vim-sleuth')
 

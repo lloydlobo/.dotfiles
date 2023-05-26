@@ -30,7 +30,9 @@ lsp.setup_servers({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer' })
 -- NOTE: Add this before the setup function of lsp-zero.
 -- If you wanted to, you could setup lua_ls specifically for Neovim, all with one line of code.
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- FIXME: Is this slowing down?
+local lspconfig = require('lspconfig')
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 -- Defines the sign icons that appear in the gutter.
 lsp.set_sign_icons({
