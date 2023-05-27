@@ -273,14 +273,16 @@ gaps inner 5px
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
 # 5px * 2
-gaps outer 0px
+gaps outer 5px
 
 # Overwrite gaps to 0, I need all the space I can get on workspace 3.
 workspace 3 gaps inner 0
 workspace 3 gaps outer 0
 
 # Only enable outer gaps when there is exactly one window or split container on the workspace.
-smart_gaps inverse_outer
+#smart_gaps inverse_outer
+# Expected one of these tokens: '1', 'yes', 'true', 'on', 'enable', 'active', '0', 'no', 'false', 'off', 'disable', 'inactive', 'inverse_outer'
+smart_gaps enable
 
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -444,16 +446,17 @@ client.background       #333443
 bar {
   i3bar_command i3bar --transparency
   colors {
-    background #33344399
+    background #010101
+    #background #33333399
     statusline #aaaaaa
     #statusline #444554
     separator  #444554
 
-    focused_workspace  #83CAFA50 #51A2DA50 #FFFFFF
-    active_workspace   #3C6EB450 #29417250 #FFFFFF
-    inactive_workspace #8C8C8C50 #4C4C4C50 #888888
-    urgent_workspace   #EC69A050 #DB327950 #FFFFFF
-    binding_mode       #b691d350 #A07CBC50 #FFFFFF
+    focused_workspace  #83CAFA69 #51A2DA69 #FFFFFF
+    active_workspace   #3C6EB469 #29417269 #FFFFFF
+    inactive_workspace #8C8C8C69 #4C4C4C69 #888888
+    urgent_workspace   #EC69A069 #DB327969 #FFFFFF
+    binding_mode       #b691d369 #A07CBC69 #FFFFFF
   }
   font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
   font pango: JetBrains Mono Nerd Font Bold 8px
