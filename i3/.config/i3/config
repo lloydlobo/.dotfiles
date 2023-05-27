@@ -447,16 +447,14 @@ bar {
   i3bar_command i3bar --transparency
   colors {
     background #010101
-    #background #33333399
     statusline #aaaaaa
-    #statusline #444554
     separator  #444554
 
-    focused_workspace  #83CAFA69 #51A2DA69 #FFFFFF
-    active_workspace   #3C6EB469 #29417269 #FFFFFF
-    inactive_workspace #8C8C8C69 #4C4C4C69 #888888
-    urgent_workspace   #EC69A069 #DB327969 #FFFFFF
-    binding_mode       #b691d369 #A07CBC69 #FFFFFF
+    focused_workspace  #83CAFA #51A2DA #FFFFFF
+    active_workspace   #3C6EB4 #294172 #FFFFFF
+    inactive_workspace #8C8C8C #4C4C4C #888888
+    urgent_workspace   #EC69A0 #DB3279 #FFFFFF
+    binding_mode       #b691d3 #A07CBC #FFFFFF
   }
   font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
   font pango: JetBrains Mono Nerd Font Bold 8px
@@ -469,7 +467,7 @@ bar {
   # Height in pixels
   height 18
 
-  workspace_min_width 40
+  #workspace_min_width 40
 
   # show status bar when Mod1 is pressed
   # mode dock|hide|invisible || hidden_state hide|show || modifier <Modifier>|none
