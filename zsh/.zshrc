@@ -116,4 +116,4 @@ bindkey "^f" fzf_preview_edit
 #
 # This will prevent zsh from attempting to correct dc if it is mistyped.
 
-#source /home/lloyd/.config/broot/launcher/bash/br
+source /home/lloyd/.config/broot/launcher/bash/br

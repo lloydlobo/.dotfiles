@@ -105,7 +105,9 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # ~/.tmux/plugins
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins
-export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH# Press Ctrl + R to open the reverse search prompt.
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
+# Press Ctrl + R to open the reverse search prompt.
 #
 # Type in a search term and press Enter.
 #
