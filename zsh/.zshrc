@@ -17,13 +17,10 @@ eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
 
-# The Fuck alias
-alias yeet='thefuck'
-
-# alias for dc that runs cd instead.  # eval `thefuck --alias dc='cd'`
-
-# Source: Command Line Cheat Sheets by Elijah Manor.
-alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
+alias hist="history | awk '{\$1=\"\"; print \$0}' | fzf --height 40% --reverse --tac | xsel -i -b" # open a filtered history using fzf and copy the selected command to the clipboard using xsel -i -b.
+alias ls='ls -a --color'
+alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr' # Source: Command Line Cheat Sheets by Elijah Manor.
+alias yeet='thefuck' # alias for dc that runs cd instead.  # eval `thefuck --alias dc='cd'`
 
 path+=("$HOME/.cargo/bin")
 export PATH
@@ -36,9 +33,6 @@ export PATH
 
 export VISUAL=nvim
 export EDITOR=nvim
-
-# open a filtered history using fzf and copy the selected command to the clipboard using xsel -i -b.
-alias hist="history | awk '{\$1=\"\"; print \$0}' | fzf --height 40% --reverse --tac | xsel -i -b"
 
 # pnpm
 export PNPM_HOME="/home/lloyd/.local/share/pnpm"
@@ -108,7 +102,7 @@ bindkey "^f" fzf_preview_edit
 
 # It's worth noting that zsh has its own built-in correction mechanism called correct. You can enable it by adding the following line to your .zshrc file:
 #
-# setopt correct
+setopt correct
 #
 # With correct enabled, zsh will attempt to correct your command if it detects a spelling mistake or other error. You can also use the nocorrect command to disable correction for a specific command. For example:
 #
