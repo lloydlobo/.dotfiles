@@ -48,3 +48,5 @@ cargo install zellij
 cargo install zoxide
 
 pip install httpie
+
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash

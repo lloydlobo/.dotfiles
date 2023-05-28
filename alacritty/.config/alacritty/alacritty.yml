@@ -32,8 +32,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 10
+    y: 4
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
   # Background opacity
@@ -41,7 +41,7 @@ window:
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
   # opacity: 1.0
-  opacity: 0.88
+  opacity: 0.94
 
   # Window decorations
   #
@@ -109,8 +109,8 @@ font:
     # family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: Hack
-    #family: JetBrains Mono
+    # family: Hack Nerd Font
+    family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
@@ -128,7 +128,7 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    #family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
@@ -146,7 +146,7 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    #family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
@@ -164,7 +164,7 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    #family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
@@ -178,7 +178,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 1
+    y: 0
     # Glyph offset determines the locations of the glyphs within their cells with
     # the default being at the bottom. Increasing `x` moves the glyph to the right,
     # increasing `y` moves the glyph upwards.
