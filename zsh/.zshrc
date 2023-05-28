@@ -111,3 +111,4 @@ setopt correct
 # This will prevent zsh from attempting to correct dc if it is mistyped.
 
 source /home/lloyd/.config/broot/launcher/bash/br
+alias lzd='lazydocker'
