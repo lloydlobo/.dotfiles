@@ -39,3 +39,14 @@ function main() {
 }
 
 main
+
+# FIXME:
+#  Installing  $ git clone --depth 1 https://github.com/wbthomason/packer.nvim\033[0m
+# Cloning into 'packer.nvim\'...
+# remote: Repository not found.
+# fatal: repository 'https://github.com/wbthomason/packer.nvim\/' not found
+#   Error       ⚠️  Failed to run git clone --depth 1 https://github.com/wbthomason/packer.nvim\033[0m
+#   Installing  $  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# ./install.sh: line 26: /home/lloyd/.local/share/nvim/site/pack/packer/start/packer.nvim: Is a directory
+#   Error       ⚠️  Failed to run  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+

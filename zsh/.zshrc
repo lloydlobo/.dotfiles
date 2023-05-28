@@ -4,7 +4,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 #plug "wintermi/zsh-starship"
-plug "wintermi/zsh-rust"
+#plug "wintermi/zsh-rust"
 # plug 'zsh-users/zsh-history-substring-search'
 
 # theme
@@ -116,4 +116,4 @@ bindkey "^f" fzf_preview_edit
 #
 # This will prevent zsh from attempting to correct dc if it is mistyped.
 
-source /home/lloyd/.config/broot/launcher/bash/br
+#source /home/lloyd/.config/broot/launcher/bash/br

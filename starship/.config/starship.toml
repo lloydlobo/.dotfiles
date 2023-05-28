@@ -9,9 +9,12 @@
 # https://starship.rs
 
 [character]
-success_symbol = "[](white)"
-error_symbol = "[](red)"
-vicmd_symbol = "[](green)"
+#success_symbol = "[](white)"
+#error_symbol = "[](red)"
+#vicmd_symbol = "[](green)"
+#success_symbol = "[](white)"
+#error_symbol = "[](red)"
+#vicmd_symbol = "[](green)"
 
 [directory.substitutions]
 "dotfiles/.config/fish" = "fish 🐠"

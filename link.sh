@@ -45,22 +45,26 @@ run_stow() {
     # `-n` Run `stow` in simulation mode as to not modify filesystem.
     if [ "$os" == "Linux" ]; then
         for package_name in ${dots[0]}; do
-            log_pad "🔌 $app is linking $package_name..."
-            stow "$package_name"
-            if [ $? -eq 0 ]; then
-                log_pad "⚡ $app linked $package_name"
-            else
-                log_pad "⚠️  $app Error occured while linking $package_name"
+            if [ "$package_name" != "test" ]; then
+                log_pad "🔌 $app is linking $package_name..."
+                stow "$package_name"
+                if [ $? -eq 0 ]; then
+                    log_pad "⚡ $app linked $package_name"
+                else
+                    log_pad "⚠️  $app Error occured while linking $package_name"
+                fi
             fi
         done
     elif [ "$os" == "Darwin" ]; then
         for package_name in ${dots[0]}; do
-            log_pad "🔌 $app is linking $package_name..."
-            stow "$package_name"
-            if [ $? -eq 0 ]; then
-                log_pad "⚡ $app linked $package_name"
-            else
-                log_pad "⚠️ $app Error occured while linking $package_name"
+            if [ "$package_name" != "test" ]; then
+                log_pad "🔌 $app is linking $package_name..."
+                stow "$package_name"
+                if [ $? -eq 0 ]; then
+                    log_pad "⚡ $app linked $package_name"
+                else
+                    log_pad "⚠️ $app Error occured while linking $package_name"
+                fi
             fi
         done
     fi

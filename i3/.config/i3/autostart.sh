@@ -7,10 +7,12 @@
 resolution="1024x768"
 
 xrandr -s $resolution &
-echo "resolution set to ${resolution}"
+echo "resolution set to ${resolution}" &
 
 #setxkbmap -layout us
 #setxkbmap -option 'grp:alt_shift_toggle'
+
+xmodmap ~/.Xmodmap &
 
 ## Start process.
 # `picom` to reduce screen tearing. with `-b` daemonize flag.

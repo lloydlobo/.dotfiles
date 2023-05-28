@@ -1,0 +1,27 @@
+❯ getnf
+Fonts directory exists, good.
+Fonts download directory exists, good.
+Select one or more fonts:
+1) 3270                 20) Hack                38) Mononoki
+2) Agave                21) Hasklig             39) NerdFontsSymbolsOnl
+3) AnonymousPro         22) HeavyData           40) Noto
+4) Arimo                23) Hermit              41) OpenDyslexic
+5) AurulentSansMono     24) IBMPlexMono         42) Overpass
+6) BigBlueTerminal      25) Inconsolata         43) ProFont
+7) BitstreamVeraSansMon 26) InconsolataGo       44) ProggyClean
+8) CascadiaCode         27) InconsolataLGC      45) RobotoMono
+9) CodeNewRoman         28) Iosevka             46) ShareTechMono
+10) ComicShannsMono     29) IosevkaTerm         47) SourceCodePro
+11) Cousine             30) JetBrainsMono       48) SpaceMono
+12) DaddyTimeMono       31) Lekton              49) Terminus
+13) DejaVuSansMono      32) LiberationMono      50) Tinos
+14) DroidSansMono       33) Lilex               51) Ubuntu
+15) FantasqueSansMono   34) MPlus               52) UbuntuMono
+16) FiraCode            35) Meslo               53) VictorMono
+17) FiraMono            36) Monofur             54) iA-Writer
+18) Go-Mono             37) Monoid              55) Quit
+19) Gohu
+Enter font number(s) (e.g. 1,2,3 or 1-3 or 1,3-5): 3,8,13,16,20,24,28,30,38,39,41,47,49,53,54
+AnonymousPro download started...
+###                                                                 5.6%
+
