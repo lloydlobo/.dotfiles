@@ -24,7 +24,7 @@ exec_always --no-startup-id ~/.config/i3/autostart.sh
 
 # reload i3 config and run $ i3-msg reload
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper/*
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 
 # I use geoclue2 to automatically set my location longitute and latitue based on Geo IP. Works pretty neat actually and very easy to configure
 # I put exec --no-startup-id redshift -O 5000
@@ -59,7 +59,7 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
 # font pango:Fira Code Nerd Font 10px
-font pango:JetBrains Mono 10px
+font pango:JetBrainsMono Nerd Font 10px
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
