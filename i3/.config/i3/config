@@ -24,7 +24,7 @@ exec_always --no-startup-id ~/.config/i3/autostart.sh
 
 # reload i3 config and run $ i3-msg reload
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
+#exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 
 # I use geoclue2 to automatically set my location longitute and latitue based on Geo IP. Works pretty neat actually and very easy to configure
 # I put exec --no-startup-id redshift -O 5000
@@ -268,12 +268,12 @@ hide_edge_borders smart
 smart_borders on
 
 # Configure 5px of space between windows and to the screen edges.
-gaps inner 5px
+gaps inner 4px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
 # 5px * 2
-gaps outer 5px
+gaps outer 1px
 
 # Overwrite gaps to 0, I need all the space I can get on workspace 3.
 workspace 3 gaps inner 0

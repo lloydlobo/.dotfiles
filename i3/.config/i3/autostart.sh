@@ -14,12 +14,22 @@ echo "resolution set to ${resolution}" &
 
 xmodmap ~/.Xmodmap &
 
-# -s to avoid pywal tampering with tmux opacity.
-wal -i -s ~/Pictures/wallpapers/default.png &
+# -s (Skip setting the terminal colors) to avoid pywal tampering with tmux opacity.
+#wal -s -i ~/Pictures/wallpapers/default.png &
+
+# -i (Set transparency)
+#wal -a 80 -i ~/Pictures/wallpapers/default.png &
+
+# Restore the previously genrated color scheme and wallpaper.
+#wal -s -R &
+wal -i 99 -R &
 
 ## Start process.
 # `picom` to reduce screen tearing. with `-b` daemonize flag.
+#for kernel blur to work.
 picom --backend xrender --config ~/.config/picom/picom.conf -b
+#for dual_kawase blur to work.
+#picom --experimental-backend --config ~/.config/picom/picom.conf -b
 
 # `dunst` notification daemon.
 dunst -config ~/.config/dunst/dunstrc &
