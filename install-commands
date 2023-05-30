@@ -1,41 +1,34 @@
-sudo dnf install alacritty
+sudo dnf install stow
 sudo dnf install curl
-sudo dnf install cmake
+sudo dnf install git
+sudo dnf install wget
 sudo dnf install vim
+sudo dnf install gcc
+sudo dnf groupinstall "Development Tools" "Development Libraries"
+
+sudo dnf install alacritty
+sudo dnf install cmake
 sudo dnf install dunst
 sudo dnf install fzf
-sudo dnf install git
 sudo dnf install gitui
+sudo dnf install git-delta
 sudo dnf install gh
 sudo dnf install howdoi
 sudo dnf install nnn
-sudo dnf install ranger
-sudo dnf install ripgrep
 sudo dnf install picom
 sudo dnf install python3-pip
-sudo dnf install wget
-
-sudo dnf install zsh
-sudo dnf install util-linux-user
-chsh -s $(which zsh)
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+sudo dnf install ranger
+sudo dnf install ripgrep
 
 sudo dnf install -y neovim python3-neovim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-git clone https://github.com/ronniedroid/getnf.git
-cd getnf
-./install.sh
-cd -
-rm -rf getnf/
-
 curl https://sh.rustup.rs -sSf | sh
 
 cargo install bat
 cargo install bottom --locked
-cargo install btm
 cargo install broot
 cargo install fd-find
 cargo install kondo
@@ -50,3 +43,14 @@ cargo install zoxide
 pip install httpie
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+git clone https://github.com/ronniedroid/getnf.git
+cd getnf
+./install.sh
+cd -
+rm -rf getnf/
+
+sudo dnf install zsh
+sudo dnf install util-linux-user
+chsh -s $(which zsh)
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
