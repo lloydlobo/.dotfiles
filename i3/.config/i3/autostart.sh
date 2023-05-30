@@ -14,6 +14,9 @@ echo "resolution set to ${resolution}" &
 
 xmodmap ~/.Xmodmap &
 
+# -s to avoid pywal tampering with tmux opacity.
+wal -i -s ~/Pictures/wallpapers/default.png &
+
 ## Start process.
 # `picom` to reduce screen tearing. with `-b` daemonize flag.
 picom --backend xrender --config ~/.config/picom/picom.conf -b
