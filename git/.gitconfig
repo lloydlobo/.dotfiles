@@ -64,3 +64,5 @@
 [ghq]
   root = ~/.ghq
   vcs = git
+[status]
+	submoduleSummary = true
