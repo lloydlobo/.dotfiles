@@ -1,0 +1,63 @@
+configuration {
+	width: 1000;
+	show-icons: true;
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+    disable-history: false;
+    sidebar-mode: true;
+	font: "JetBrainsMono Nerd Font 9";
+	auto-select: false;
+    scroll-method: 0;
+	hide-scrollbar: false;
+}
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+element {
+    border: 0;
+    padding: 1px;
+}
+element-text {
+    text-color: inherit;
+    background-color: inherit;
+}
+textbox {
+    text-color: @foreground;
+}
+window {
+    background-color: @background;
+    border: 0;
+    padding: 5 0 5 5;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: 0;
+    spacing: 8px;
+    padding: 2px 0px 0px;
+    scrollbar: false;
+    border: 4px 0px 0px;
+    border-color: @normal-background;
+}

@@ -37,12 +37,15 @@ cargo install miniserve
 cargo install starship
 cargo install tealdeer
 cargo install tokei
+cargo install tree-sitter-cli
 cargo install trashy
 cargo install zellij
 cargo install zoxide
 
 sudo pip install httpie
 sudo pip install pywal
+
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
@@ -51,6 +54,13 @@ cd getnf
 ./install.sh
 cd -
 rm -rf getnf/
+
+sudo dnf install rofi
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+cd -
 
 sudo dnf install zsh
 sudo dnf install util-linux-user
