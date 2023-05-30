@@ -100,6 +100,8 @@ function fzf_preview_edit() {
 zle -N fzf_preview_edit
 bindkey "^f" fzf_preview_edit
 
+source /home/lloyd/.config/broot/launcher/bash/br
+alias lzd='lazydocker'
 
 # It's worth noting that zsh has its own built-in correction mechanism called correct. You can enable it by adding the following line to your .zshrc file:
 #
@@ -110,6 +112,3 @@ setopt correct
 # nocorrect dc
 #
 # This will prevent zsh from attempting to correct dc if it is mistyped.
-
-source /home/lloyd/.config/broot/launcher/bash/br
-alias lzd='lazydocker'
