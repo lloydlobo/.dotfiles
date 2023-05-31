@@ -21,6 +21,10 @@ sudo dnf install ranger
 sudo dnf install ripgrep
 sudo dnf install unclutter-xfixes
 
+sudo dnf install zsh
+sudo dnf install util-linux-user
+chsh -s $(which zsh)
+
 sudo dnf install -y neovim python3-neovim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
@@ -67,7 +71,8 @@ chmod +x setup.sh
 ./setup.sh
 cd -
 
-sudo dnf install zsh
-sudo dnf install util-linux-user
-chsh -s $(which zsh)
+curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
+chmod +x gdu_linux_amd64
+sudo mv gdu_linux_amd64 /usr/bin/gdu
+
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
