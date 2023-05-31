@@ -146,3 +146,5 @@ function fzf-history-widget() {
 # 	echo "fzhist: fzf reverse search on steroids"
 # 	bind -x '"\C-r": "$(fc -l 1 | fzf | sed '\''s/^[[:space:]]*//'\'' | cut -d '\'' '\'' -f 2-)"'
 # fi
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
