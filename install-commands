@@ -9,6 +9,7 @@ sudo dnf groupinstall "Development Tools" "Development Libraries"
 sudo dnf install alacritty
 sudo dnf install cmake
 sudo dnf install dunst
+sudo dnf install entr
 sudo dnf install fzf
 sudo dnf install gitui
 sudo dnf install git-delta
