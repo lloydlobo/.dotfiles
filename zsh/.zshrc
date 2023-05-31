@@ -18,8 +18,13 @@ eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
 
+alias cp="cp -i" # confirm before overwrite.
+alias df="df -h"; # human-readable sizes.
+alias mv="mv -i"; # confirm before overwrite.
+alias ns="netstat -tup --wide"; # show active program sockets.
 alias hist="history | awk '{\$1=\"\"; print \$0}' | fzf --height 40% --reverse --tac | xsel -i -b" # open a filtered history using fzf and copy the selected command to the clipboard using xsel -i -b.
 alias ls='ls -a --color'
+alias lzd='lazydocker'
 alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr' # Source: Command Line Cheat Sheets by Elijah Manor.
 alias yeet='thefuck' # alias for dc that runs cd instead.  # eval `thefuck --alias dc='cd'`
 
@@ -108,7 +113,6 @@ zle -N fzf_preview_edit
 bindkey "^f" fzf_preview_edit
 
 source /home/lloyd/.config/broot/launcher/bash/br
-alias lzd='lazydocker'
 
 # It's worth noting that zsh has its own built-in correction mechanism called correct. You can enable it by adding the following line to your .zshrc file:
 #
