@@ -1,4 +1,32 @@
+sudo dnf remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine
+
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+docker compose version
+
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+
 ❯ sudo systemctl start docker
+
 
 ❯ sudo groupadd docker
 groupadd: group 'docker' already exists
@@ -25,3 +53,6 @@ To avoid issues with overusing disk for log data, consider one of the following 
     Configure the json-file logging driver to turn on log rotation.
     Use an alternative logging driver such as the “local” logging driver that performs log rotation by default.
     Use a logging driver that sends logs to a remote logging aggregator.
+
+Use docker init which comes with Docker Desktop to spin up
+templated containers etc..
