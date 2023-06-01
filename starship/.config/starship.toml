@@ -11,16 +11,21 @@
 #right_format = """$all"""
 
 # Move the directory to the second line
-format = '$time$all$directory$shlvl$character'
+#format = '$time$shlvl$all$directory$character'
 
-add_newline = false
+add_newline = true
 # A continuation prompt that displays two filled in arrows
 continuation_prompt = '▶▶ '
 
+# Show the regular bash prompt symbols
 [character]
-success_symbol = "[λ](white)" #success_symbol = "[](white)"
-error_symbol = "[](magenta)"
-vimcmd_symbol = "[](green)"
+success_symbol = "[\\$](bold white)"
+error_symbol = "[\\$](bold purple)"
+vimcmd_symbol = "[](bold green)"
+#[character]
+#success_symbol = "[λ](white)" #success_symbol = "[](white)"
+#error_symbol = "[](magenta)"
+#vimcmd_symbol = "[](green)"
 
 [directory.substitutions]
 ".dotfiles/.config/fish" = "fish 🐠"
@@ -36,6 +41,10 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 [package]
 disabled = true
 
+# Enable the Kubernetes module
+[kubernetes]
+disabled = false
+
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 20
@@ -47,12 +56,16 @@ disabled = false
 style_user = "bold dimmed blue"
 show_always = false
 
+# Show the battery level if under 20%
+[[battery.display]]
+threshold = 20
+
 [hostname]
 disabled = false
-ssh_only = true
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
+ssh_only = false
+#format = "<[$hostname]($style)> "
+#trim_at = "-"
+#style = "bold dimmed white"
 
 [aws]
 disabled = false
@@ -107,24 +120,35 @@ style = "yellow"
 
 [shlvl]
 disabled = false
-threshold = 1
+repeat = false
+threshold = 2
 style = "bold dimmed white"
-#symbol = "\\$"
-#symbol = "↕️ "
+format = '[$symbol$shlvl]($style) '
 symbol = "lvl"
+#symbol = "l"
+#symbol = "↕️ "
+#symbol = "\\$"
 
 [shell]
 disabled = false
-#bash_indicator = ""
+bash_indicator = ""
 #zsh_indicator = "z"
+powershell_indicator = ""
+cmd_indicator = ""
 
 [os]
 disabled = true
-#format = "$symbol "
+format = "$symbol "
+symbols.Fedora = ""
 #symbols.Ubuntu = ""
 
 [nix_shell]
 symbol = " "
+disabled = false
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [☃️ $state( \($name\))](bold blue) '
 
 #[modules.git]
 #disabled = false
