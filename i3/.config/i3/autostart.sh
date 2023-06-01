@@ -19,13 +19,13 @@ xmodmap ~/.Xmodmap &
 wal -a 90 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
 #wal -R &
 
-
 # `dunst` notification daemon.
 dunst -config ~/.config/dunst/dunstrc &
 
 # Open predefined windows.
 # Permanent windows (usually should stay opened).
 # @source echasnovski/dotfiles.
-i3-msg 'workspace "10:monitor"; layout splith' & #sleep 1
-i3-sensible-terminal -e btm  & #sleep 1
+
+i3-msg 'workspace "10:monitor"; layout splith' #sleep 1
+i3-sensible-terminal -e btm #sleep 1
 

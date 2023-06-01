@@ -60,12 +60,13 @@ lsp.on_attach(function(client, bufnr)
     -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
     -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts) -- [v]im [d]iagnostic.
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)          -- go to next [d]iagnostic.
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)          -- go to previous [d]iagnostic.
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)  -- [v]im [c]ode [a]ction.
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)   -- [v]im [r]eferences [r].
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)       -- [v]im [r]ename [n]ame.
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)  -- [v]im [d]iagnostic.
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)           -- go to next [d]iagnostic.
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)           -- go to previous [d]iagnostic.
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)   -- [v]im [c]ode [a]ction.
+    vim.keymap.set("n", "<leader>vcm", function() vim.cmd([[CodeActionMenu]]) end, opts) -- [v]im [c]ode action [m]enu.
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)    -- [v]im [r]eferences [r].
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)        -- [v]im [r]ename [n]ame.
 
     -- FIXME: Doesn't work. -- See [Reference](lsp.txt)
     -- signature_help()                                *vim.lsp.buf.signature_help()*

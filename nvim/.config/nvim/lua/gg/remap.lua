@@ -95,7 +95,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "[k] Next location
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "[j] Previous location" })
 
 -- Search and replace string under the cursor globally.
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[s]earch and replace" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "[s]earch and replace" })
 
 -- Make file executable.
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file e[x]ecutable" })
@@ -120,4 +121,3 @@ end, { desc = "Source [file]" })
 -- /\(.\) -- everything that has a `.` (dot). Looks like a fighting one-eyed curvy. e.g. vnoremap("J"...
 -- <word_to_replace> -- do not use `<`/`>` while entering the word.
 -- (/<word_to_replace_with>"\1 -- suffix with `"` and the first letter (dot) char we skipped earlier. so `"v` e.g. vim.keymap.set("v"...
-
