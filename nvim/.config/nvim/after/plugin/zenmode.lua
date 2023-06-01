@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>zz", function()
     vim.wo.wrap = false
     vim.wo.number = false
     vim.wo.rnu = false
+    vim.opt.colorcolumn = "0"
     ColorMyPencils()
 end)
 
@@ -25,5 +26,6 @@ vim.keymap.set("n", "<leader>zZ", function()
     vim.wo.number = false
     vim.wo.rnu = false
     vim.opt.colorcolumn = "0"
+    --vim.cmd([[Gitsigns detatch]])
     ColorMyPencils()
 end)
