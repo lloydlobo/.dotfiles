@@ -1,27 +1,26 @@
 ===============================================================
 
+References:
+  https://blog.kubukoz.com/flakes-first-steps/
+  https://nixos.org/download.html#nix-install-linux
+
+===============================================================
+
 To disable SELinux (Security-Enhanced Linux) on Fedora, you can follow these steps:
 
 1. Open a terminal on your Fedora system.
 
 2. Edit the SELinux configuration file using a text editor with root privileges. For example, you can use the nano editor:
-
    ```
    sudo nano /etc/selinux/config
    ```
-
 3. Locate the line that says `SELINUX=enforcing` and change it to:
-
    ```
    SELINUX=disabled
    ```
-
    This line sets SELinux to be disabled on system startup.
-
 4. Save the changes and exit the text editor.
-
 5. Reboot your system to apply the changes:
-
    ```
    sudo reboot
    ```
@@ -30,14 +29,18 @@ Upon reboot, SELinux will be disabled on your Fedora system. Keep in mind that d
 
 ===============================================================
 
-sh <(curl -L https://nixos.org/nix/install) --daemon
+   ```
+   sh <(curl -L https://nixos.org/nix/install) --daemon
+   ```
 
 ===============================================================
 
 Alright! We're done!
 Try it! Open a new terminal, and type:
 
-  $ nix-shell -p nix-info --run "nix-info -m"
+   ```
+   $ nix-shell -p nix-info --run "nix-info -m"
+   ```
 
 ===============================================================
 
