@@ -448,11 +448,11 @@ set_from_resource $accent i3wm.color6 #aaaaaa
 set_from_resource $fg i3wm.color7 #f0f0f0
 
 # class                 border     backgr.      text         indicator       child_border
-client.focused          $black     $black       $fg          $darker         $dim
-client.focused_inactive $black     $black       $dim         $bg             $bg
-client.unfocused        $black     $black       $darker      $bg             $bg
-client.urgent           $black     $black       #ff0000      $bg             $bg
-client.placeholder      $black     $black       $dim         $bg             $bg
+client.focused          $black     $bg30       $fg          $darker         $dim
+client.focused_inactive $black     $bg30       $dim         $bg             $bg
+client.unfocused        $black     $bg30       $darker      $bg             $bg
+client.urgent           $black     $bg30       #ff0000      $bg             $bg
+client.placeholder      $black     $bg30       $dim         $bg             $bg
 
 client.background       $black
 

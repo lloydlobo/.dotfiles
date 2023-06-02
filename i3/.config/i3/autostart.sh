@@ -16,7 +16,7 @@ xrandr -s $resolution &
 
 xmodmap ~/.Xmodmap &
 
-wal -a 90 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
+wal -a 99 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
 #wal -R &
 
 # `dunst` notification daemon.
