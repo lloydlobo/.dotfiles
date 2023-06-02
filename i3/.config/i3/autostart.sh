@@ -19,6 +19,8 @@ xmodmap ~/.Xmodmap &
 wal -a 99 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
 #wal -R &
 
+$HOME/.config/polybar/launch.sh &
+
 # `dunst` notification daemon.
 dunst -config ~/.config/dunst/dunstrc &
 
