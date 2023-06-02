@@ -447,12 +447,12 @@ set_from_resource $dim i3wm.color5 #cccccc
 set_from_resource $accent i3wm.color6 #aaaaaa
 set_from_resource $fg i3wm.color7 #f0f0f0
 
-# class                 border     backgr.      text         indicator       child_border
-client.focused          $black     $bg30       $fg          $darker         $dim
-client.focused_inactive $black     $bg30       $dim         $bg             $bg
-client.unfocused        $black     $bg30       $darker      $bg             $bg
-client.urgent           $black     $bg30       #ff0000      $bg             $bg
-client.placeholder      $black     $bg30       $dim         $bg             $bg
+# class                 border        backgr.      text         indicator       child_border
+client.focused          $accent80     $black80       $fg          $darker         $dim
+client.focused_inactive $bg20         $black80       $dim         $bg             $bg
+client.unfocused        $bg20         $black80       $darker      $bg             $bg
+client.urgent           $bg20         $black80       #ff0000      $bg             $bg
+client.placeholder      $bg20         $black80       $dim         $bg             $bg
 
 client.background       $black
 
@@ -485,7 +485,7 @@ bar {
   # Height in pixels Note: As a convenience for users who migrate from i3-gaps to i3, the height directive from i3-gaps is supported by i3, but should be changed to padding.
   #height 16
   colors {
-    background $black
+    background $black90
     statusline $bg
     separator  $accent
 
