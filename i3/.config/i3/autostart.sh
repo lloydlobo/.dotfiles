@@ -28,7 +28,8 @@ xmodmap ~/.Xmodmap
 
 #dunst -config ~/.config/dunst/dunstrc &
 
-#wal -a 99 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
-# -i (Set transparency)
-#wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
-wal -R
+# -a (Sets transparency)
+
+#wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/alena-aenami-15step-AEE71.png &
+wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
+#wal -R
