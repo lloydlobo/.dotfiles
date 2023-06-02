@@ -1,0 +1,33 @@
+
+===================================================
+
+sudo dnf install openssh
+sudo dnf install openssh-server
+sudo systemctl enable --now ssh
+sudo systemctl enable --now sshd.service
+sudo systemctl status ssh.service
+sudo systemctl status sshd.service
+
+sudo systemctl status ssh
+
+===================================================
+
+https://www.reddit.com/r/Fedora/comments/jp8c2h/i_cant_get_sshservice_to_start_in_fedora/
+
+sudo systemctl list-unit-files -t service will show all available services and
+whether they're enabled.
+
+From there it would be pretty obvious to notice that you're looking for sshd
+.service, not ssh.service
+
+Edit: Or, if you still don't see it, try sudo dnf install openssh-server
+to ensure you have it installed in the first place (though I believe this
+        is installed by default).
+
+===================================================
+
+Check your firewall:
+sudo firewall-cmd --list-all
+
+===================================================
+

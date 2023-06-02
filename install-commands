@@ -78,4 +78,11 @@ curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.t
 chmod +x gdu_linux_amd64
 sudo mv gdu_linux_amd64 /usr/bin/gdu
 
+sudo dnf install openssh
+sudo dnf install openssh-server
+sudo systemctl enable --now ssh
+sudo systemctl enable --now sshd.service
+sudo ufw allow ssh
+sudo firewall-cmd --list-all
+
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
