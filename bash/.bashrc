@@ -148,3 +148,13 @@ function fzf-history-widget() {
 # fi
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
+
+
+# Import colorscheme from 'wal' asynchronously.
+# & - Run the process in the background.
+# ( ) - Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+# To add dupport for TTYs this line canbe optionally added.
+source ~/.cache/wal/colors-tty.sh
+

@@ -38,6 +38,7 @@ curl https://sh.rustup.rs -sSf | sh
 cargo install bat
 cargo install bottom --locked
 cargo install broot
+cargo install clipboard-cli
 cargo install fd-find
 cargo install kondo
 cargo install miniserve
