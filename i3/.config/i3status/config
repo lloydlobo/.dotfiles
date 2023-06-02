@@ -18,35 +18,29 @@ general {
 }
 
 # Enabled
-order += "load"
 order += "disk /"
+order += "load"
 order += "memory"
 order += "volume master"
 order += "tztime local"
 
 # Disabled
+#order += "cpu_usage"
+#order += "ethernet _first_"
 #order += "wireless _first_"
 #order += "battery all"
-#order += "cpu_usage"
 #order += "read_file uptime"
 #order += "read_file BRIGHTNESS"
-#order += "ethernet _first_"
 #order += "cpu_temperature 0"
 #order += "ipv6"
 
 volume master {
-format = "VOL %volume"
+        format = "VOL %volume"
 	format_muted = "MUT %volume"
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
 }
-
-# read_file BRIGHTNESS {
-#         format = "BRI %content%"
-#         path = "/home/ll/.config/brightness"
-#         max_characters = 5
-# }
 
 cpu_usage {
         format= "CPU %usage [%cpu0 %cpu1]"
@@ -62,19 +56,19 @@ disk "/" {
         format = " HDD %avail | USED %percentage_used "
         # format = "<span color='#c0caf5'> HDD %avail | USED %percentage_used </span>"
 }
- 
+
 wireless _first_ {
-        format_up = " W (%quality at %essid, %bitrate) " 
-        # format_up = " W (%quality at %essid, %bitrate) %ip " 
-        # format_up = "<span color='#c0caf5'>W (%quality at %essid, %bitrate) %ip </span>" 
+        format_up = " W (%quality at %essid, %bitrate) "
         format_down = "<span color='#c0caf5'> WIFI DOWN </span>"
+        # format_up = "<span color='#c0caf5'>W (%quality at %essid, %bitrate) %ip </span>"
+        # format_up = " W (%quality at %essid, %bitrate) %ip "
 }
 
 ethernet _first_ {
         format_up = " E %ip (%speed) "
+        format_down = "E down"
         # format_up = "<span color='#c0caf5'> E %ip (%speed) </span>"
         # format_up = "E %ip (%speed)"
-        format_down = "E down"
 }
 
 battery all {
@@ -88,10 +82,12 @@ battery all {
         low_threshold = 10
 }
 
+
 read_file uptime {
-          format = "<span color='#c0caf5'> UPTIME %content% </span>"
+          #format = "<span color='#c0caf5'> UPTIME %content% </span>"
+          format = "<span color='#ffffff50'> UP %content% </span>"
           path = "/proc/uptime"
-         # path = "neofetch uptime --uptime_shorthand tiny"
+          #path = "neofetch uptime --uptime_shorthand tiny"
 }
 
 memory {
@@ -104,12 +100,19 @@ memory {
 
 load {
         # format = "<span color='#c0caf5'> LOAD %1min %5min %15min </span>"
-        format = " LOAD %1min %5min %15min "
+        #format = " LOAD %1min %5min %15min "
+        format = " LOAD %5min"
 }
 
 tztime local {
 	format = " %Y-%m-%d %H:%M:%S "
 }
+
+# read_file BRIGHTNESS {
+#         format = "BRI %content%"
+#         path = "/home/ll/.config/brightness"
+#         max_characters = 5
+# }
 
 # Keyboard LED indicator.
 # xset q | grep Caps | tr -s ' ' | cut -d ' ' -f 5,9,13 | sed 's/on/▣/g' | sed 's/off/▢/g'
