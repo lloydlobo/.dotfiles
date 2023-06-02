@@ -1,7 +1,6 @@
+# i3 config file (v4)
 # vim filetype=i3
 
-# i3 config file (v4)
-#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 #font pango:JetBrains Mono Nerd Font Medium 8
@@ -94,8 +93,8 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 workspace_auto_back_and_forth yes
 
 # GET DEM BORDERS OUT OF HEREc:w
-for_window [class="^.*"] border pixel 3
-new_window pixel 3
+for_window [class="^.*"] border pixel 2
+new_window pixel 2
 new_float normal
 
 # when in fullscreen, do not show popups
