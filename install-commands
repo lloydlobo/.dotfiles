@@ -22,6 +22,7 @@ sudo dnf install python3-pip
 sudo dnf install ranger
 sudo dnf install ripgrep
 sudo dnf install unclutter-xfixes
+sudo dnf install xclip
 
 sudo dnf install zsh
 sudo dnf install util-linux-user

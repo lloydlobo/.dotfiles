@@ -27,7 +27,11 @@ to ensure you have it installed in the first place (though I believe this
 ===================================================
 
 Check your firewall:
+
 sudo firewall-cmd --list-all
+sudo firewall-cmd --get-active-zones
+#sudo firewall-cmd --list-all --zone=public
+#sudo firewall-cmd --set-default-zone=public
 
 ===================================================
 
