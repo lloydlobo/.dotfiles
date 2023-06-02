@@ -14,12 +14,12 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b & # `picom` to re
 resolution="1024x768"
 xrandr -s $resolution &
 
+
 xmodmap ~/.Xmodmap &
 
-wal -a 99 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
+#wal -a 99 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
+wal -a 99 --saturate 0.15 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg & # -i (Set transparency)
 #wal -R &
-
-$HOME/.config/polybar/launch.sh &
 
 # `dunst` notification daemon.
 dunst -config ~/.config/dunst/dunstrc &
@@ -28,6 +28,7 @@ dunst -config ~/.config/dunst/dunstrc &
 # Permanent windows (usually should stay opened).
 # @source echasnovski/dotfiles.
 
+$HOME/.config/polybar/launch.sh &
 i3-msg 'workspace "10:monitor"; layout splith' #sleep 1
 i3-sensible-terminal -e btm #sleep 1
 
