@@ -65,7 +65,8 @@ jobs:
           fail-on-alert: true
           comment-on-alert: true
           alert-threshold: "150%"
-          auto-push: true
+          #auto-push must be false when external-data-json-path is set since this action reads/writes the given JSON file and never pushes to remote
+          auto-push: false
           benchmark-data-dir-path: .github/pages/dev/branch
           alert-comment-cc-users: "@lloydlobo"
           github-token: ${{ secrets.GITHUB_TOKEN }}
