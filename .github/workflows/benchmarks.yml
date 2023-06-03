@@ -1,0 +1,72 @@
+name: benchmarks
+# GitHub Action for continuous benchmarking to keep performance
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  # deployments permission to deploy GitHub pages website
+  deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
+
+jobs:
+  #sync:
+  #  name: Sync README
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v3
+  #    - name: sync
+  #      env:
+  #        TARGET_BRANCH: "gh-pages"
+  #      run: |
+  #        files=("README.md" ".github/pages/_config.yml")
+  #        git config --global user.name 'GitHub Action'
+  #        git config --global user.email 'action@github.com'
+  #        git fetch
+  #        git checkout $TARGET_BRANCH
+  #        git checkout ${GITHUB_REF##*/} -- ${files[@]} # copy files from the source branch
+  #        git add -A
+  #        git diff-index --quiet HEAD || git commit -am "deploy files" # commit to the repository (ignore if there is no modification)
+  #        git push origin $TARGET_BRANCH
+
+  benchmark:
+    name: Performance regression check
+    runs-on: ubuntu-latest #container: fedora:latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+        #- uses: actions/setup-go@v1
+        # Run benchmark with `go test -bench` and stores the output to a file
+      - name: Run benchmark
+        run: ./.github/scripts/benchmarks.sh | tee /tmp/result-benchmarks.json
+        env:
+          TERM: screen-256color
+      - name: git stash
+        run: git stash
+      # Download previous benchmark result from cache (if exists)
+      - name: Download previous benchmark data
+        uses: actions/cache@v1
+        with:
+          path: ./cache
+          key: ${{ runner.os }}-benchmark
+      # Run `github-action-benchmark` action
+      - name: Store benchmark result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          # What benchmark tool the output.txt came from
+          tool: customSmallerIsBetter
+          # Where the output from the benchmark tool is stored
+          output-file-path: /tmp/result-benchmark.json
+          # Where the previous data file is stored
+          external-data-json-path: ./cache/benchmark-data.json
+          # Workflow will fail when an alert happens
+          fail-on-alert: true
+          comment-on-alert: true
+          alert-threshold: "150%"
+          auto-push: true
+          benchmark-data-dir-path: .github/pages/dev/branch
+          alert-comment-cc-users: "@lloydlobo"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Upload the updated cache file for the next job by actions/cache

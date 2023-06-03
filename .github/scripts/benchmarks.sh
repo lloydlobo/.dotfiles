@@ -18,7 +18,7 @@ set -eu
 ZSH_LOAD_TIME=$(awk '{ total += $1 } END { print total/NR }' /tmp/zsh-load-time.txt)
 
 # HACK: removes ansi escape sequences on the last line.
-head -n -1 /tmp/zsh-load-time.txt  | tee /tmp/zsh-load-time.txt
+head -n -1 /tmp/zsh-load-time.txt | tee /tmp/zsh-load-time.txt>/dev/null
 
 cat <<EOJ
 [
