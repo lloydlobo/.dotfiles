@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 app="Distrohop"
 
@@ -36,6 +36,13 @@ print_os_info() {
     log_pad "Target  -  target_dir: $target_dir"
 }
 
+ignored_directories=(".git" ".github" "test" "xfce4")
+
+# If not found, link the package and log success or error.
+# Check if $package_name exists in the ignored_directories array.
+# If found, log that the directory is being ignored.
+# The pattern matching with asterisks (*) is used to match substrings.
+#
 # TODO: Diagnostics:
 # 1. Use find instead of ls to better handle non-alphanumeric filenames. [SC2012]
 # 2. Use ./*glob* or -- *glob* so names with dashes won't become options. [SC2035]
@@ -43,31 +50,20 @@ run_stow() {
     dots=$(ls -d */ | tr '/' ' ') # List only directories.
 
     # `-n` Run `stow` in simulation mode as to not modify filesystem.
-    if [ "$os" == "Linux" ]; then
-        for package_name in ${dots[0]}; do
-            if [ "$package_name" != "test" ]; then
-                log_pad "🔌 $app is linking $package_name..."
-                stow "$package_name"
-                if [ $? -eq 0 ]; then
-                    log_pad "⚡ $app linked $package_name"
-                else
-                    log_pad "⚠️  $app Error occured while linking $package_name"
-                fi
+    for package_name in ${dots[0]}; do
+        if [[ " ${ignored_directories[*]} " != *" $package_name "* ]]; then
+            log_pad "🔌 $app is linking $package_name..."
+            stow "$package_name"
+
+            if [ $? -eq 0 ]; then
+                log_pad "⚡ $app linked $package_name"
+            else
+                log_pad "⚠️  $app Error occured while linking $package_name"
             fi
-        done
-    elif [ "$os" == "Darwin" ]; then
-        for package_name in ${dots[0]}; do
-            if [ "$package_name" != "test" ]; then
-                log_pad "🔌 $app is linking $package_name..."
-                stow "$package_name"
-                if [ $? -eq 0 ]; then
-                    log_pad "⚡ $app linked $package_name"
-                else
-                    log_pad "⚠️ $app Error occured while linking $package_name"
-                fi
-            fi
-        done
-    fi
+        else
+            log_pad "🔥 $app is ignoring $package_name"
+        fi
+    done
 }
 
 main() {
