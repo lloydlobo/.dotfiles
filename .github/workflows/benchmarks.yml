@@ -52,23 +52,25 @@ jobs:
         with:
           path: ./cache
           key: ${{ runner.os }}-benchmark
+      # FIXME: Disabled the `Store benchmark workflow` as I have to research more about it
+      #        Also it requires an installation of my OS in the container it will be benched in.
       # Run `github-action-benchmark` action
-      - name: Store benchmark result
-        uses: benchmark-action/github-action-benchmark@v1
-        with:
-          # What benchmark tool the output.txt came from
-          tool: customSmallerIsBetter
-          # Where the output from the benchmark tool is stored
-          output-file-path: /tmp/result-benchmarks.json
-          # Where the previous data file is stored
-          external-data-json-path: ./cache/benchmark-data.json
-          # Workflow will fail when an alert happens
-          fail-on-alert: true
-          comment-on-alert: true
-          alert-threshold: "150%"
-          #auto-push must be false when external-data-json-path is set since this action reads/writes the given JSON file and never pushes to remote
-          auto-push: false
-          benchmark-data-dir-path: .github/pages/dev/branch
-          alert-comment-cc-users: "@lloydlobo"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Store benchmark result
+      #  uses: benchmark-action/github-action-benchmark@v1
+      #  with:
+      #    # What benchmark tool the output.txt came from
+      #    tool: customSmallerIsBetter
+      #    # Where the output from the benchmark tool is stored
+      #    output-file-path: /tmp/result-benchmarks.json
+      #    # Where the previous data file is stored
+      #    external-data-json-path: ./cache/benchmark-data.json
+      #    # Workflow will fail when an alert happens
+      #    fail-on-alert: true
+      #    comment-on-alert: true
+      #    alert-threshold: "150%"
+      #    #auto-push must be false when external-data-json-path is set since this action reads/writes the given JSON file and never pushes to remote
+      #    auto-push: false
+      #    benchmark-data-dir-path: .github/pages/dev/branch
+      #    alert-comment-cc-users: "@lloydlobo"
+      #    github-token: ${{ secrets.GITHUB_TOKEN }}
       # Upload the updated cache file for the next job by actions/cache
