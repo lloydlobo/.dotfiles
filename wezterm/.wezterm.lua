@@ -35,7 +35,7 @@ config.use_ime = true
 --config.cursor_blink_ease_in = "Constant"
 --config.cursor_blink_ease_out = "Constant"
 --config.cursor_blink_rate = 0
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%"
 config.window_padding = {
