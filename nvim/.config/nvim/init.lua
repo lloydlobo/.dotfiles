@@ -15,6 +15,8 @@ require("gg")
 --       -- Triggers the |SourcePre| autocommand.
 -- ## :s/<from>/<to>/g -- Find & Replace, all words after cursor.
 -- ## = -- Indents selection(s) or line.
+-- ## $ cat <filename> | nvim - -- Pipe in stream of text directly into a nvim instance.
+-- ## :read <filename> -- Copy content of <filename> to current buffer.
 
 ---
 --- # OS PREFERENCES
