@@ -8,7 +8,10 @@ sudo systemctl enable --now sshd.service
 sudo systemctl status ssh.service
 sudo systemctl status sshd.service
 
-sudo systemctl status ssh
+# Use `ip a` and select `inet` value till '\' for your VM's IP.
+# <BROADCAST...>
+
+#sudo systemctl status ssh
 
 ===================================================
 
@@ -27,6 +30,13 @@ to ensure you have it installed in the first place (though I believe this
 ===================================================
 
 Check your firewall:
+
+sudo systemctl status firewalld
+sudo systemctl start firewalld
+sudo firewall-cmd --get-default-zone # The default zone is usually public, but it may vary depending on your system configuration.
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
+                                                        # Warning: ALREADY_ENABLED: ssh
+                                                        # success
 
 sudo firewall-cmd --list-all
 sudo firewall-cmd --get-active-zones
