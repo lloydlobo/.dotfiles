@@ -39,8 +39,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Copy the benchmarks file
-        run: sudo cp -r ./.github/pages/dev ./_site
+      # FIXME: Temporarily disable this faling action step.
+      #- name: Copy the benchmarks file
+      #  run: sudo cp -r ./.github/pages/dev ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
