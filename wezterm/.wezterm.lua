@@ -27,7 +27,7 @@ config.text_background_opacity = 0.61 -- The text_background_opacity setting spe
 config.color_scheme = 'Gruvbox Red'
 --config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
 config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
-config.font_size = 8.5
+config.font_size = 9.0 -- 8.5
 --config.cell_width = 1.1
 --config.line_height = 1.1
 config.check_for_updates = true
