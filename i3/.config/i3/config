@@ -93,9 +93,17 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 workspace_auto_back_and_forth yes
 
 # GET DEM BORDERS OUT OF HEREc:w
-for_window [class="^.*"] border pixel 2
-new_window pixel 2
+for_window [class="^.*"] border pixel 0
+new_window pixel 0
 new_float normal
+
+#default_border pixel 4
+
+# @source https://www.reddit.com/r/i3wm/comments/tbsavp/comment/i0akvvw/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+#note to dynamically adjust border size of all existing windows
+bindsym $mod+Shift+b exec "i3-msg [class=.\*] border pixel 4"
+bindsym $mod+Shift+Ctrl+b exec "i3-msg [class=.\*] border pixel 0"
+
 
 # when in fullscreen, do not show popups
 # unless its belongs to the fullscreened application
