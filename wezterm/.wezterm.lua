@@ -19,7 +19,7 @@ config.window_frame = {
   inactive_titlebar_bg = '#111111',
 }
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.80
 config.text_background_opacity = 0.3 -- The text_background_opacity setting specifies the alpha channel value to use for the background color of cells other than the default background color.
 config.color_scheme = 'Gruvbox Red'
 config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
