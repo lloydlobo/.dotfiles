@@ -17,7 +17,7 @@ end
 
 config.window_frame = {
   font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Bold' },
-  font_size = 8.0,
+  font_size = 8,
   active_titlebar_bg = '#030303',
   inactive_titlebar_bg = '#111111',
 }
@@ -39,10 +39,10 @@ config.hide_tab_bar_if_only_one_tab = false
 config.adjust_window_size_when_changing_font_size = false
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%"
 config.window_padding = {
-  top = 0,
-  right = 0,
+  --  top = 0,
+  --  right = 0,
   bottom = 0,
-  left = 0,
+  --  left = 0,
 }
 config.use_fancy_tab_bar = false
 
@@ -59,7 +59,7 @@ config.colors = {
 }
 
 config.exit_behavior = "CloseOnCleanExit"
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 config.window_close_confirmation = "AlwaysPrompt"
 config.disable_default_key_bindings = false
 
