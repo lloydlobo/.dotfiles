@@ -101,7 +101,7 @@ new_float normal
 
 # @source https://www.reddit.com/r/i3wm/comments/tbsavp/comment/i0akvvw/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 #note to dynamically adjust border size of all existing windows
-bindsym $mod+Shift+b exec "i3-msg [class=.\*] border pixel 4"
+bindsym $mod+Shift+b exec "i3-msg [class=.\*] border pixel 1"
 bindsym $mod+Shift+Ctrl+b exec "i3-msg [class=.\*] border pixel 0"
 
 

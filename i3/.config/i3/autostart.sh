@@ -16,11 +16,11 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b # `picom` to redu
 # Open predefined windows. @source echasnovski/dotfiles.
 # Permanent windows (usually should stay opened).
 # TODO: close i3-sensible-terminal with btm, and open it.
-i3-msg 'workspace "10:monitor"; layout splith'
-sleep 1
-i3-sensible-terminal -e btm
-sleep 1
-i3-msg 'workspace "1";'
+#i3-msg 'workspace "10:monitor"; layout splith'
+#sleep 1
+#i3-sensible-terminal -e btm
+#sleep 1
+#i3-msg 'workspace "1";'
 
 $HOME/.config/polybar/launch.sh
 

@@ -8,9 +8,9 @@ killall -q polybar
 
 # Launch bar1 and bar2
 #echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-echo "---" | tee -a /tmp/polybar_bar.log
+echo "---" | tee -a /tmp/polybar_bar.log /tmp/polybar_wpm.log
 polybar bar 2>&1 | tee -a /tmp/polybar_bar.log & disown
-#polybar bar2 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar wpm 2>&1 | tee -a /tmp/polybar_wpm.log & disown
 
 #echo "Bars launched..."
-echo "Bar launched..."
+echo "Polybars launched..."
