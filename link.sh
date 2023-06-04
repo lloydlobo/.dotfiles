@@ -36,7 +36,7 @@ print_os_info() {
     log_pad "Target  -  target_dir: $target_dir"
 }
 
-ignored_directories=(".git" ".github" "test" "xfce4")
+ignored_directories=(".git" ".github" "test" "xfce4" "jqp")
 
 # If not found, link the package and log success or error.
 # Check if $package_name exists in the ignored_directories array.

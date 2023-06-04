@@ -24,7 +24,8 @@ config.window_frame = {
 
 config.window_background_opacity = 0.80
 config.text_background_opacity = 0.61 -- The text_background_opacity setting specifies the alpha channel value to use for the background color of cells other than the default background color.
-config.color_scheme = 'Gruvbox Red'
+--config.color_scheme = 'Gruvbox Red'
+
 --config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
 config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
 config.font_size = 9.0 -- 8.5
@@ -59,7 +60,7 @@ config.colors = {
 }
 
 config.exit_behavior = "CloseOnCleanExit"
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.window_close_confirmation = "AlwaysPrompt"
 config.disable_default_key_bindings = false
 
