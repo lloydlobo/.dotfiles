@@ -45,6 +45,7 @@ config.window_padding = {
   bottom = 0,
   --  left = 0,
 }
+config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
 config.colors = {
@@ -59,10 +60,14 @@ config.colors = {
   },
 }
 
-config.exit_behavior = "CloseOnCleanExit"
-config.tab_bar_at_bottom = false
 config.window_close_confirmation = "AlwaysPrompt"
-config.disable_default_key_bindings = false
+config.skip_close_confirmation_for_processes_named = {
+  -- 'bash', 'sh', 'zsh', 'fish',
+  'tmux', 'nu',
+  'cmd.exe', 'pwsh.exe', 'powershell.exe',
+}
+config.exit_behavior = "CloseOnCleanExit"
+
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
@@ -72,6 +77,8 @@ table.insert(config.hyperlink_rules, {
 
 --config.enable_csi_u_key_encoding = true
 --config.leader = { key = "Space", mods = "CTRL|SHIFT" }
+
+config.disable_default_key_bindings = false
 
 config.keys = {
   {
