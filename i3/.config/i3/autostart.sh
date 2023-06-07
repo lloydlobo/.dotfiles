@@ -22,14 +22,15 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b # `picom` to redu
 #sleep 1
 #i3-msg 'workspace "1";'
 
-$HOME/.config/polybar/launch.sh
+"$HOME"/.config/polybar/launch.sh
 
 xmodmap ~/.Xmodmap
+setxkbmap # activate dvorak.
 
 #dunst -config ~/.config/dunst/dunstrc &
 
 # -a (Sets transparency)
 
 #wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/alena-aenami-15step-AEE71.png &
-wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
+wal -a 99 --saturate 0.30 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
 #wal -R

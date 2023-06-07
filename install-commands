@@ -1,10 +1,10 @@
+sudo dnf groupinstall "Development Tools" "Development Libraries"
 sudo dnf install stow
 sudo dnf install curl
 sudo dnf install git
 sudo dnf install wget
 sudo dnf install vim
 sudo dnf install gcc
-sudo dnf groupinstall "Development Tools" "Development Libraries"
 
 sudo dnf install alacritty
 sudo dnf install cmake
@@ -25,15 +25,7 @@ sudo dnf install ranger
 sudo dnf install ripgrep
 sudo dnf install unclutter-xfixes
 sudo dnf install xclip
-
-sudo dnf install zsh
-sudo dnf install util-linux-user
-chsh -s $(which zsh)
-
-sudo dnf install -y neovim python3-neovim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+sudo dnf install xinput
 
 curl https://sh.rustup.rs -sSf | sh
 
@@ -54,6 +46,12 @@ cargo install zoxide
 
 sudo pip install httpie
 sudo pip install pywal
+
+sudo dnf install zsh
+sudo dnf install util-linux-user
+chsh -s $(which zsh)
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 source ~/.zshrc
@@ -88,4 +86,20 @@ sudo systemctl enable --now sshd.service
 sudo ufw allow ssh
 sudo firewall-cmd --list-all
 
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+if [ ! -f "/etc/yum.repos.d/vscode.repo" ]; then
+    echo "[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo
+fi
+sudo dnf install code
+
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+
+sudo dnf install onboard
+localectl status
+sudo localectl set-keymap us-dvorak
+sudo localectl --no-convert set-x11-keymap dvorak

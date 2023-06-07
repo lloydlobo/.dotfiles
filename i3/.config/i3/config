@@ -8,6 +8,15 @@
 # - set xrandr to fit fullscreen when on VirtualBox.
 exec_always --no-startup-id ~/.config/i3/autostart.sh
 
+# exec "setxkbmap -layout us,dvorak"
+# exec "setxkbmap -option 'grp:alt_shift_toggle'"
+# switch keymap
+# https://superuser.com/questions/1147320/how-to-change-keyboard-layout-in-i3
+# "setxkbmap -layout ch -variant fr"
+# "setxkbmap -layout ru -variant phonetic"
+# bindsym $mod+Ctrl+Shift+F11 exec "setxkbmap -layout us,dvorak"
+# bindsym $mod+Ctrl+Shift+F12 exec "setxkbmap -layout us,dvorak"
+
 #exec picom --experimental-backends --config ~/.config/picom/picom.conf
 
 # reload i3 config and run $ i3-msg reload
@@ -31,6 +40,7 @@ exec --no-startup-id redshift -t 5700:3600
 
 # Opens xfce4 by default on fedora i3.
 exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id wezterm
 #exec --no-startup-id alacritty
 #exec --no-startup-id firefox
 
@@ -135,6 +145,7 @@ bindsym $mod+Shift+q kill
 # A more modern dmenu replacement is rofi:
 #bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 bindsym $mod+Ctrl+space exec "rofi -modi drun,run -show drun"
+bindsym $mod+Ctrl+shift+o exec --no-startup-id "onboard"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -278,6 +289,7 @@ smart_borders on
 #for_window [all] title_window_icon off
 # enable window icons for all windows with extra horizontal padding
 for_window [all] title_window_icon padding 3px
+for_window [class="Onboard"] floating enable
 
 # Configure 5px of space between windows and to the screen edges.
 gaps inner 4px
