@@ -24,8 +24,9 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b # `picom` to redu
 
 "$HOME"/.config/polybar/launch.sh
 
-xmodmap ~/.Xmodmap
+# xmodmap ~/.Xmodmap
 setxkbmap # activate dvorak.
+setxkbmap -option ctrl:nocaps # Remap Capslock as Control.
 
 #dunst -config ~/.config/dunst/dunstrc &
 
