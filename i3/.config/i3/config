@@ -39,7 +39,7 @@ exec --no-startup-id redshift -t 5700:3600
 # Configure apps to start up on login
 
 # Opens xfce4 by default on fedora i3.
-exec --no-startup-id i3-sensible-terminal
+# exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id wezterm
 #exec --no-startup-id alacritty
 #exec --no-startup-id firefox
@@ -132,7 +132,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec wezterm
 
 # start a terminator by pressing Mod key + x or ENTER
 #set $terminator alacritty
@@ -518,7 +519,7 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 #}
 
 # downloaded from: https://www.youtube.com/watch?v=
- bindsym Control+mod1+Delete exec mpv --fullscreen Rick\ Roll\ 10\ seconds\ \[QNXvE1BZu8g\].webm --no-input-default-bindings
+# bindsym Control+mod1+Delete exec mpv --fullscreen Rick\ Roll\ 10\ seconds\ \[QNXvE1BZu8g\].webm --no-input-default-bindings
 
 # use bash command or save the xrandr cmd in .config/i3/autostart.sh
 # Fit the VM Virtual Machine display to fullscreen: xrandr -s 1024x768
