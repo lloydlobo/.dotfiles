@@ -26,12 +26,13 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b # `picom` to redu
 "$HOME"/.config/polybar/launch.sh
 
 # xmodmap ~/.Xmodmap  # Disabled custom key remaps, now using `-option`
-setxkbmap # activate dvorak.
+#setxkbmap # activate dvorak from localectl.
+setxkbmap -layout us -variant colemak_dh
 setxkbmap -option ctrl:nocaps # Remap Capslock as Control.
 
 dunst -config ~/.config/dunst/dunstrc &
 
 # -a (Sets transparency)
 #wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/alena-aenami-15step-AEE71.png &
-wal -a 99 --saturate 0.15 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
+wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
 #wal -R
