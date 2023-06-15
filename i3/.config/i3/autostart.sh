@@ -34,5 +34,7 @@ dunst -config ~/.config/dunst/dunstrc &
 
 # -a (Sets transparency)
 #wal -a 99 --saturate 0.20 -i ~/Pictures/wallpapers/alena-aenami-15step-AEE71.png &
-wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
+#wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg &
+wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-jx16pm.jpg # sepia zebra crossing.
+#wal -a 99 --saturate 0.15 -i ~/Pictures/wallpapers/wallhaven-lazo2l.jpg # lady feeding dog.
 #wal -R
