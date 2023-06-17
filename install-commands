@@ -46,6 +46,7 @@ cargo install zoxide
 
 sudo pip install httpie
 sudo pip install pywal
+pip install dooit
 
 sudo dnf install zsh
 sudo dnf install util-linux-user
@@ -98,6 +99,14 @@ fi
 sudo dnf install code
 
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+
+echo '[charm]
+name=Charm
+baseurl=https://repo.charm.sh/yum/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
+sudo yum install glow
 
 sudo dnf install onboard
 localectl status
