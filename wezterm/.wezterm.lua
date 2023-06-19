@@ -22,20 +22,27 @@ config.window_frame = {
   inactive_titlebar_bg = '#111111',
 }
 
-config.window_background_opacity = 0.80
-config.text_background_opacity = 0.61 -- The text_background_opacity setting specifies the alpha channel value to use for the background color of cells other than the default background color.
+config.window_background_opacity = 0.85
+-- The text_background_opacity setting specifies the alpha channel value
+-- to use for the background color of cells other than the default background color.
+config.text_background_opacity = 0.61
 --config.color_scheme = 'Gruvbox Red'
 
 --config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
-config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
-config.font_size = 9.0 -- 8.5
+config.font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Regular' }
+config.font_size = 9.5 -- 8.5
+--config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
+--config.font_size = 9.0 -- 8.5
 --config.cell_width = 1.1
 --config.line_height = 1.1
 config.check_for_updates = true
 config.use_ime = true
+-- Acceptable values are SteadyBlock, BlinkingBlock, SteadyUnderline, BlinkingUnderline, SteadyBar, and BlinkingBar.
+--config.default_cursor_style = 'BlinkingBlock'
+--config.animation_fps = 1
 --config.cursor_blink_ease_in = "Constant"
 --config.cursor_blink_ease_out = "Constant"
---config.cursor_blink_rate = 0
+-- config.cursor_blink_rate = 800
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%"
