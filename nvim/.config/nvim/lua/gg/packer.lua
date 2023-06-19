@@ -5,9 +5,9 @@
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  is_bootstrap = true
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-  vim.cmd [[packadd packer.nvim]]
+    is_bootstrap = true
+    vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+    vim.cmd [[packadd packer.nvim]]
 end
 
 -- NOTE: if you use NixOS don't install mason.nvim
@@ -101,11 +101,19 @@ return require('packer').startup(function(use)
             {
                 'neovim/nvim-lspconfig',
                 requires = {
-                    { 'williamboman/mason.nvim',          run = function() pcall(vim.cmd, 'MasonUpdate') end, }, -- Optional
-                    { 'williamboman/mason-lspconfig.nvim' },                                                     -- Optional
+                    {
+                        'williamboman/mason.nvim',
+                        run = function() pcall(vim.cmd, 'MasonUpdate') end,
+                    },                                       -- Optional
+                    { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-                    -- Useful status updates for LSP -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-                    { 'j-hui/fidget.nvim',                opts = {} },
+                    -- Useful status updates for LSP
+                    {
+                        'j-hui/fidget.nvim',
+                        -- NOTE: fidget.nvim will soon be completely rewritten.
+                        --tag = { 'legacy' }, -- In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
+                        opts = { tag = 'legacy' }
+                    }, -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 
                     -- Additional lua configuration, make nvim stuff amazing!
                     { 'folke/neodev.nvim', }, -- Additional lua configuration, makes nvim stuff amazing!
@@ -151,6 +159,9 @@ return require('packer').startup(function(use)
     --    'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
     --    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     --})
+
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+
     use("folke/zen-mode.nvim")
     --use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")

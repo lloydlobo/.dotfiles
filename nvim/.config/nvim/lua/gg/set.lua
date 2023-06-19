@@ -1,8 +1,9 @@
-vim.opt.guicursor = "" -- Fat cursor also for insert mode.
+-- Disabled as wezterm handles in. [NORMAL] block [INSERT] bar.
+--vim.opt.guicursor = "" -- Fat cursor also for insert mode.
 
 -- OR use -- if true then   end
 
-local show_numbers = false            -- NOTE: toggle this to show numbers.
+local show_numbers = true             -- NOTE: toggle this to show curr line num and relative line nums.
 vim.opt.nu = show_numbers             -- Set numbers in gutter.
 vim.opt.relativenumber = show_numbers -- Use relative numbers in gutter.
 
@@ -35,7 +36,7 @@ vim.opt.spelllang = { "en_us" }
 
 vim.opt.scrolloff = 8         -- Minimal number of screen lines to keep above and below the cursor.
 
-vim.opt.signcolumn = "yes:2" -- "auto" "auto:[1-9]" "yes" "auto:[1-8]-[2-9]" "yes:[1-9]" "number"
+vim.opt.signcolumn = "yes:2"  -- "auto" "auto:[1-9]" "yes" "auto:[1-8]-[2-9]" "yes:[1-9]" "number"
 
 vim.opt.isfname:append("@-@") -- The characters specified by this option are included in file names and
 --                            --   path names.  Filenames are used for commands like "gf", "[i" and in
