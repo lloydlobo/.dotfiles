@@ -22,17 +22,17 @@ config.window_frame = {
   inactive_titlebar_bg = '#111111',
 }
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.80
 -- The text_background_opacity setting specifies the alpha channel value
 -- to use for the background color of cells other than the default background color.
 config.text_background_opacity = 0.61
 --config.color_scheme = 'Gruvbox Red'
 
 --config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
-config.font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Regular' }
-config.font_size = 9.5 -- 8.5
---config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
---config.font_size = 9.0 -- 8.5
+--config.font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Regular' }
+--config.font_size = 9.5 -- 8.5
+config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
+config.font_size = 9.0 -- 8.5
 --config.cell_width = 1.1
 --config.line_height = 1.1
 config.check_for_updates = true

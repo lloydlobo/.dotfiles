@@ -3,7 +3,7 @@
 
 -- OR use -- if true then   end
 
-local show_numbers = true             -- NOTE: toggle this to show curr line num and relative line nums.
+local show_numbers = false             -- NOTE: toggle this to show curr line num and relative line nums.
 vim.opt.nu = show_numbers             -- Set numbers in gutter.
 vim.opt.relativenumber = show_numbers -- Use relative numbers in gutter.
 

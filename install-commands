@@ -112,3 +112,7 @@ sudo dnf install onboard
 localectl status
 sudo localectl set-keymap us-dvorak
 sudo localectl --no-convert set-x11-keymap dvorak
+
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+pipx install jrnl

@@ -43,6 +43,9 @@ alias yeet='thefuck' # alias for dc that runs cd instead.  # eval `thefuck --ali
 path+=("$HOME/.cargo/bin")
 export PATH
 
+setopt HIST_IGNORE_SPACE
+alias jrnl=" jrnl"
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 	PATH="$HOME/.local/bin:$HOME/bin:$PATH"

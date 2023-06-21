@@ -31,6 +31,22 @@ autocmd({ "BufWritePre" }, {
     command = [[%s/\s\+$//e]],
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPre" }, {
+    group = vim.api.nvim_create_augroup("PrivateJrnl", {}),
+    pattern = "*.jrnl",
+    callback = function()
+        vim.o.shada = ""
+        vim.o.swapfile = false
+        vim.o.undofile = false
+        vim.o.backup = false
+        vim.o.writebackup = false
+        vim.o.shelltemp = false
+        vim.o.history = 0
+        vim.o.modeline = false
+        vim.o.secure = true
+    end,
+})
+
 -- NOTE: Where should I put you?
 -- Esc twice to get to normal mode
 vim.cmd([[tnoremap <esc><esc> <C-\><C-N>]])

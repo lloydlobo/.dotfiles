@@ -133,6 +133,8 @@ function fzf-history-widget() {
 		READLINE_POINT=${#READLINE_LINE}
 	fi
 }
+HISTIGNORE="$HISTIGNORE:jrnl *"
+
 
 ## zsh
 # Bind fzf to Ctrl+R for reverse history search
