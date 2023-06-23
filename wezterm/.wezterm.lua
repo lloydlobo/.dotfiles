@@ -22,7 +22,7 @@ config.window_frame = {
   inactive_titlebar_bg = '#111111',
 }
 
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.77
 -- The text_background_opacity setting specifies the alpha channel value
 -- to use for the background color of cells other than the default background color.
 config.text_background_opacity = 0.61
@@ -73,8 +73,7 @@ config.skip_close_confirmation_for_processes_named = {
   'tmux', 'nu',
   'cmd.exe', 'pwsh.exe', 'powershell.exe',
 }
-config.exit_behavior = "CloseOnCleanExit"
-
+--config.exit_behavior = "CloseOnCleanExit" -- disabled to support clean exit from $EDITOR
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
