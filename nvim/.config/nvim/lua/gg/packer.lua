@@ -113,7 +113,7 @@ return require('packer').startup(function(use)
                         -- NOTE: fidget.nvim will soon be completely rewritten.
                         --tag = { 'legacy' }, -- In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
                         opts = {}
-                    },                      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+                    }, -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 
                     -- Additional lua configuration, make nvim stuff amazing!
                     { 'folke/neodev.nvim', }, -- Additional lua configuration, makes nvim stuff amazing!
