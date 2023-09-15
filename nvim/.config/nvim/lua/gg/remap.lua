@@ -48,6 +48,10 @@ vim.keymap.set("v", "<leader>d", "\"_d", { desc = "[d]elete selection without ya
 -- C-c to exit. (old habits die hard)
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode with [C-c]" })
 
+-- C-s to save buffer.
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save buffer in normal mode with [C-s]" })
+vim.keymap.set("i", "<C-s>", "<cmd>w<CR>", { desc = "Save buffer in insert mode with [C-s]" })
+
 -- Never press Q.
 vim.keymap.set("n", "Q", "<nop>", { desc = "Do nothing on [Q]" })
 
@@ -72,6 +76,7 @@ vim.keymap.set("n", "<C-f>d", "<cmd>!fd<CR>", { desc = "List all files in curren
 -- NOTE: Use tree for now.
 vim.keymap.set("n", "<C-f>d", "<cmd>!zellij run -- <CR>", { desc = "[d]irectory run" })
 
+-- Open in zellij
 vim.keymap.set('n', '<leader>tz', function()
     local prompt = vim.fn.input("zellij run -- ") -- grep_string (provides search term which is a vim function input)
     -- TODO: something like this: :split term://node " . a:filename.
@@ -94,12 +99,15 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "[C-j] Previous error"
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "[k] Next location" })
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "[j] Previous location" })
 
--- Search and replace string under the cursor globally.
+-- Search and replace string under the cursor globally. Substitute / Substitution
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "[s]earch and replace" })
 
 -- Make file executable.
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file e[x]ecutable" })
+
+-- Make executable files non-executable.
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { desc = "Make executable file non-e[X]ecutable" })
 
 -- <normal> -> `<leader>+p+s` -> `:Telescope grep_string` (Grep search term project).
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it [r]ain" })

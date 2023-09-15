@@ -6,7 +6,12 @@
 local lsp = require('lsp-zero').preset({})
 
 -- NOTE: `.ensure_installed()` will be removed. Use the module mason-lspconfig to install LSP servers.
-lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', })
+lsp.ensure_installed({
+    'tsserver',
+    --    'eslint',
+    'lua_ls',
+    'rust_analyzer',
+})
 
 -- Fix Undefined global 'vim'.
 lsp.nvim_workspace()
@@ -14,7 +19,10 @@ lsp.nvim_workspace()
 -- Manual setup.
 -- NOTE: if you use NixOS don't install mason.nvim.
 -- When you don't have mason.nvim installed. You'll need to list the servers installed in your system.
-lsp.setup_servers({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer' })
+lsp.setup_servers({ 'tsserver',
+
+    -- 'eslint',
+    'lua_ls', 'rust_analyzer' })
 
 -- NOTE: Adopted primes lua-language-server to lua_ls. Not sure if the options are same.
 -- Fix Undefined global 'vim'

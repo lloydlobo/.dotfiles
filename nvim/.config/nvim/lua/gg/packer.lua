@@ -66,15 +66,15 @@ return require('packer').startup(function(use)
     --        { 'nvim-treesitter/nvim-treesitter-textobjects', },
     --    }
     --})
-    use('nvim-treesitter/playground') -- `TSPlaygroundToggle` -> (view AST).
-    use('ThePrimeagen/harpoon')       -- Getting you where you want with the fewest keystrokes.
-    --use({
-    --    "ThePrimeagen/refactoring.nvim", -- The Refactoring library based off the Refactoring book by Martin Fowler
-    --    requires = {
-    --        { "nvim-lua/plenary.nvim" },
-    --        { "nvim-treesitter/nvim-treesitter" }
-    --    }
-    --})
+    use('nvim-treesitter/playground')    -- `TSPlaygroundToggle` -> (view AST).
+    use('ThePrimeagen/harpoon')          -- Getting you where you want with the fewest keystrokes.
+    use({
+        "ThePrimeagen/refactoring.nvim", -- The Refactoring library based off the Refactoring book by Martin Fowler
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    })
     use('mbbill/undotree') -- undo history visualizer.
 
     -- Git related plugins.
@@ -123,8 +123,9 @@ return require('packer').startup(function(use)
             -- Autocompletion
             {
                 'hrsh7th/nvim-cmp',
-                requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip',
-                    'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets', },
+                requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
+                    'rafamadriz/friendly-snippets',
+                },
             },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
