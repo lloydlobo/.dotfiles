@@ -22,10 +22,10 @@ config.window_frame = {
   inactive_titlebar_bg = '#111111',
 }
 
-config.window_background_opacity = 0.77
+config.window_background_opacity = 0.95
 -- The text_background_opacity setting specifies the alpha channel value
 -- to use for the background color of cells other than the default background color.
-config.text_background_opacity = 0.61
+config.text_background_opacity = 0.71
 --config.color_scheme = 'Gruvbox Red'
 
 --config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
@@ -36,6 +36,7 @@ config.font_size = 9.0 -- 8.5
 --config.cell_width = 1.1
 --config.line_height = 1.1
 config.check_for_updates = true
+config.show_update_window = true
 config.use_ime = true
 -- Acceptable values are SteadyBlock, BlinkingBlock, SteadyUnderline, BlinkingUnderline, SteadyBar, and BlinkingBar.
 --config.default_cursor_style = 'BlinkingBlock'

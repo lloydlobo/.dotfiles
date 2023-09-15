@@ -28,16 +28,16 @@ picom --config /home/lloyd/.config/picom/picom.conf --vsync -b # `picom` to redu
 
 # xmodmap ~/.Xmodmap  # Disabled custom key remaps, now using `-option`
 #setxkbmap # activate dvorak from localectl.
-setxkbmap -layout us -variant colemak_dh
-setxkbmap -option ctrl:nocaps # Remap Capslock as Control.
+# setxkbmap -layout us -variant colemak_dh
+# setxkbmap -option ctrl:nocaps # Remap Capslock as Control.
 
 dunst -config ~/.config/dunst/dunstrc &
 
 # -a (Sets transparency)
-#wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg # green garden.
+wal -a 99 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-dp19wl.jpg # green garden.
 #wal -a 89 --saturate 0.65 -i ~/Pictures/wallpapers/wallhaven-4ylxyg.jpg # red forest.
 #wal -a 80 --saturate 0.35 -i ~/Pictures/wallpapers/wallhaven-we6oqp.jpg # abstart golden fractals dark bg.
-wal -a 80 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-7p6wke.png # nord river valley.
+#wal -a 80 --saturate 0.25 -i ~/Pictures/wallpapers/wallhaven-7p6wke.png # nord river valley.
 
 #wal -a 99 --saturate 0.15 -i ~/Pictures/wallpapers/wallhaven-lazo2l.jpg # lady feeding dog.
 #wal -R

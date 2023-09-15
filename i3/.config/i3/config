@@ -297,7 +297,7 @@ bindsym $mod+Ctrl+j exec --no-startup-id wezterm start ~/.local/bin/jrnl
 for_window [title="floating *"] floating enable
 
 # Configure 5px of space between windows and to the screen edges.
-gaps inner 4px
+gaps inner 2px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.

@@ -144,3 +144,10 @@ setopt correct
 # nocorrect dc
 #
 # This will prevent zsh from attempting to correct dc if it is mistyped.
+
+# bun completions
+[ -s "/home/lloyd/.bun/_bun" ] && source "/home/lloyd/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
