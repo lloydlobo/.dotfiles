@@ -29,14 +29,26 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- Themes.
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        'projekt0n/github-nvim-theme',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            require('github-theme').setup({
+                -- ...
+            })
+
+            -- vim.cmd('colorscheme github_dark')
         end
     })
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         -- vim.cmd('colorscheme rose-pine')
+    --     end
+    -- })
 
+    -- Error lens/actions.
     use({
         "folke/trouble.nvim",
         config = function()
