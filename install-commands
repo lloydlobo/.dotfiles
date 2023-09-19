@@ -100,6 +100,8 @@ sudo dnf install code
 
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 
+curl -sSL https://github.com/Slackadays/Clipboard/raw/main/install.sh | sh
+
 echo '[charm]
 name=Charm
 baseurl=https://repo.charm.sh/yum/
