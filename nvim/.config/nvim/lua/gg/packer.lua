@@ -119,9 +119,9 @@ return require('packer').startup(function(use)
                     {
                         'j-hui/fidget.nvim',
                         -- NOTE: fidget.nvim will soon be completely rewritten.
-                        --tag = { 'legacy' }, -- In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
+                        tag = 'legacy', -- In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
                         opts = {}
-                    }, -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+                    },                  -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 
                     -- Additional lua configuration, make nvim stuff amazing!
                     { 'folke/neodev.nvim', }, -- Additional lua configuration, makes nvim stuff amazing!
@@ -163,11 +163,11 @@ return require('packer').startup(function(use)
     use({ "kylechui/nvim-surround", tag = "*", })
     -- Use for stability; omit to use `main` branch for the latest features
     --
-    --use({
-    --    -- Set lualine as statusline
-    --    'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
-    --    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    --})
+    use({
+        -- Set lualine as statusline
+        'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    })
 
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
