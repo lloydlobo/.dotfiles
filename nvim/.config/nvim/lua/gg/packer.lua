@@ -36,13 +36,13 @@ return require('packer').startup(function(use)
             -- vim.cmd('colorscheme github_dark')
         end
     })
-    -- use({
-    --     'rose-pine/neovim',
-    --     as = 'rose-pine',
-    --     config = function()
-    --         -- vim.cmd('colorscheme rose-pine')
-    --     end
-    -- })
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            -- vim.cmd('colorscheme rose-pine')
+        end
+    })
 
     -- Error lens/actions.
     use({
@@ -97,6 +97,8 @@ return require('packer').startup(function(use)
     use({ 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', })
     -- Detect tabstop and shiftwidth automatically.
     use('tpope/vim-sleuth')
+
+    use("folke/flash.nvim")
 
     use('lewis6991/gitsigns.nvim')                 -- Adds git releated signs to the gutter, as well as utilities for managing changes
     use('nvim-treesitter/nvim-treesitter-context') -- sticky parent function/module/.. name on scroll.

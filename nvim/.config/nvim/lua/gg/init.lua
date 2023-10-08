@@ -53,6 +53,6 @@ vim.cmd([[tnoremap <esc><esc> <C-\><C-N>]])
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.netrw_winsize = 25 -- IO/ANSI screen size is 80x24
 --vim.g.loaded_netrw = 1
 --vim.g.loaded_netrwPlugin = 1

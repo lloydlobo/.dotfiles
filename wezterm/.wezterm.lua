@@ -1,76 +1,65 @@
--- Awesome dotfile: https://github.com/yutkat/dotfiles/blob/main/.config/wezterm/wezterm.lua
-
--- Pull in the wezterm API
+-- Wezterm API
 local wezterm = require 'wezterm'
--- local scheme = wezterm.get_builtin_color_schemes()["Github (base16)"]
-local scheme = wezterm.get_builtin_color_schemes()["Batman"]
 
--- This table will hold the configuration.
+-- Main table to hold all configurations
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
+local scheme = {}  -- Used for color theme reference
+local schemes = {} -- Hold all schemes as enums
+
+-- Define a function to generate an enum and its string representation
+local function add_scheme(name)
+  return { name = name, value = #schemes + 1 }
+end
+
+-- Define color schemes as enums
+schemes.Batman                        = add_scheme("Batman")
+schemes.SolarizedDark                 = add_scheme("Builtin Solarized Dark")
+schemes.GithubBase16                  = add_scheme("Github (base16)")
+schemes.SolarizedDarkGogh             = add_scheme("Solarized Dark (Gogh)")
+schemes.SolarizedDarkPatched          = add_scheme("Solarized Dark - Patched")
+schemes.SolarizedDarkHighContrast     = add_scheme("Solarized Dark Higher Contrast")
+schemes.SolarizedDarkHighContrastGogh = add_scheme("Solarized Dark Higher Contrast (Gogh)")
+
+local desired_scheme                  = schemes.SolarizedDarkPatched
+local builtin_schemes                 = wezterm.get_builtin_color_schemes()
+local try_scheme                      = builtin_schemes[desired_scheme.name]
+if try_scheme then
+  scheme = try_scheme
+else
+  print("Invalid color scheme: " .. desired_scheme)
+end
 
 config.window_frame = {
   font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Bold' },
-  font_size = 6,
-  active_titlebar_bg = '#030303',
-  inactive_titlebar_bg = '#111111',
+  font_size = 9,
 }
 
-config.window_background_opacity = 0.94
--- The text_background_opacity setting specifies the alpha channel value
--- to use for the background color of cells other than the default background color.
-config.text_background_opacity = 0.50
--- config.color_scheme = 'Gruvbox dark, hard (base16)'
--- config.color_scheme = 'Gruvbox dark, medium (base16)'
--- config.color_scheme = 'Google (dark) (terminal.sexy)'
+config.window_background_opacity = 1.0
+config.text_background_opacity = 0.30
 
+config.colors = {
+  foreground = scheme.ansi[8],
+  background = scheme.background,
+}
 
---config.color_scheme_dirs = { os.getenv("HOME") .. "/.config/wezterm/colors/" }
---config.font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Regular' }
---config.font_size = 9.5 -- 8.5
 config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
-config.font_size = 7.5 -- 8.5
---config.cell_width = 1.1
---config.line_height = 1.1
+config.font_size = 8.5 -- IO/ANSI screen size is 80x24. 7.5 for my screen is 48 lines vim
+
 config.check_for_updates = true
 config.show_update_window = true
 config.use_ime = true
--- Acceptable values are SteadyBlock, BlinkingBlock, SteadyUnderline, BlinkingUnderline, SteadyBar, and BlinkingBar.
---config.default_cursor_style = 'BlinkingBlock'
---config.animation_fps = 1
---config.cursor_blink_ease_in = "Constant"
---config.cursor_blink_ease_out = "Constant"
--- config.cursor_blink_rate = 800
+
 config.hide_tab_bar_if_only_one_tab = false
 config.adjust_window_size_when_changing_font_size = false
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%"
-config.window_padding = {
-  --  top = 0,
-  --  right = 0,
-  bottom = 0,
-  --  left = 0,
-}
+config.window_padding = { bottom = 0, }
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
-
-config.colors = {
-  tab_bar = {
-    background = scheme.background,
-    new_tab = { bg_color = "#2e3440", fg_color = scheme.ansi[8], intensity = "Bold" },
-    new_tab_hover = { bg_color = scheme.ansi[1], fg_color = scheme.brights[8], intensity = "Bold" },
-    -- format-tab-title
-    -- active_tab = { bg_color = "#121212", fg_color = "#FCE8C3" },
-    -- inactive_tab = { bg_color = scheme.background, fg_color = "#FCE8C3" },
-    -- inactive_tab_hover = { bg_color = scheme.ansi[1], fg_color = "#FCE8C3" },
-  },
-}
 
 config.window_close_confirmation = "AlwaysPrompt"
 config.skip_close_confirmation_for_processes_named = {
@@ -78,7 +67,6 @@ config.skip_close_confirmation_for_processes_named = {
   'tmux', 'nu',
   'cmd.exe', 'pwsh.exe', 'powershell.exe',
 }
---config.exit_behavior = "CloseOnCleanExit" -- disabled to support clean exit from $EDITOR
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
@@ -86,11 +74,7 @@ table.insert(config.hyperlink_rules, {
   format = "https://github.com/$1/$3",
 })
 
---config.enable_csi_u_key_encoding = true
---config.leader = { key = "Space", mods = "CTRL|SHIFT" }
-
 config.disable_default_key_bindings = false
-
 config.keys = {
   {
     key = 'r',
@@ -105,23 +89,16 @@ config.keys = {
 }
 
 wezterm.on('update-right-status', function(window, pane)
-  -- Each element holds the text for a cell in a "powerline" style << fade
   local cells = {}
-
-  -- Figure out the cwd and host of the current pane.
-  -- This will pick up the hostname for the remote host if your
-  -- shell is using OSC 7 on the remote host.
   local cwd_uri = pane:get_current_working_dir()
   if cwd_uri then
     local cwd = ''
     local hostname = ''
 
     if type(cwd_uri) == 'userdata' then
-      -- Running on a newer version of wezterm and we have a URL object here, making this simple!
-      cwd = cwd_uri.file_path
+      cwd = cwd_uri.file_path -- check new URL object here, making this simple!
       hostname = cwd_uri.host or wezterm.hostname()
     else
-      -- an older version of wezterm, 20230712-072601-f4abf8fd or earlier, which doesn't have the Url object
       cwd_uri = cwd_uri:sub(8)
       local slash = cwd_uri:find '/'
       if slash then
@@ -133,40 +110,28 @@ wezterm.on('update-right-status', function(window, pane)
       end
     end
 
-    -- Remove the domain name portion of the hostname
-    local dot = hostname:find '[.]'
+    local dot = hostname:find '[.]' -- Remove the domain name portion of the hostname
     if dot then hostname = hostname:sub(1, dot - 1) end
     if hostname == '' then hostname = wezterm.hostname() end
     table.insert(cells, cwd)
     table.insert(cells, hostname)
   end
 
-  -- I like my date/time in this style: "Wed Mar 3 08:14"
-  local date = wezterm.strftime '%a %b %-d %H:%M'
+  local date = wezterm.strftime '%a %b %-d %H:%M' -- date/time:"Wed Mar 3 08:14"
   table.insert(cells, date)
 
-  -- An entry for each battery (typically 0 or 1 battery)
   for _, b in ipairs(wezterm.battery_info()) do
     table.insert(cells, string.format('%.0f%%', b.state_of_charge * 100))
   end
 
-  -- The powerline < symbol
-  local LEFT_ARROW = utf8.char(0xe0b3)
-  -- The filled in variant of the < symbol
-  local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+  local LEFT_ARROW = utf8.char(0xe0b3)       -- The powerline < symbol
+  local SOLID_LEFT_ARROW = utf8.char(0xe0b2) -- The filled in variant of the < symbol
 
-  -- Color palette for the backgrounds of each cell
-  -- local colors = { '#3c1361', '#52307c', '#663a82', '#7c5295', '#b491c8', }
-  local colors = { scheme.background, scheme.background, scheme.background, scheme.background, scheme.background, }
-
-  -- Foreground color for the text across the fade
-  -- local text_fg = '#c0c0c0'
-  local text_fg = scheme.ansi[8]
-
-  -- The elements to be formatted
-  local elements = {}
-  -- How many cells have been formatted
-  local num_cells = 0
+  local bg = scheme.background               -- Default: { '#3c1361', '#52307c', '#663a82', '#7c5295', '#b491c8', }
+  local colors = { bg, bg, bg, bg, bg }      -- Color palette for the backgrounds of each cell
+  local text_fg = scheme.ansi[8]             -- Foreground color for the text across the fade
+  local elements = {}                        -- The elements to be formatted
+  local num_cells = 0                        -- How many cells have been formatted
 
   -- Translate a cell into elements
   function push(text, is_last)
@@ -189,5 +154,7 @@ wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format(elements))
 end)
 
--- and finally, return the configuration to wezterm
-return config
+return config -- and finally, return the configuration to wezterm
+
+-- References:
+-- [Awesome dotfile](https://github.com/yutkat/dotfiles/blob/main/.config/wezterm/wezterm.lua)

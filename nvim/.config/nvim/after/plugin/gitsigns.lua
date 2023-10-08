@@ -6,7 +6,7 @@ require('gitsigns').setup {
         change       = { text = '~' },
         delete       = { text = '_' },
         topdelete    = { text = '‾' },
-        changedelete = { text = '~' },
+        changedelete = { text = '*' },
         untracked    = { text = '┆' },
     },
     signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
