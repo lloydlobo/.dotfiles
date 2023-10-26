@@ -25,7 +25,7 @@ schemes.SolarizedDarkPatched          = add_scheme("Solarized Dark - Patched")
 schemes.SolarizedDarkHighContrast     = add_scheme("Solarized Dark Higher Contrast")
 schemes.SolarizedDarkHighContrastGogh = add_scheme("Solarized Dark Higher Contrast (Gogh)")
 
-local desired_scheme                  = schemes.SolarizedDarkPatched
+local desired_scheme                  = schemes.SolarizedDarkHighContrastGogh
 local builtin_schemes                 = wezterm.get_builtin_color_schemes()
 local try_scheme                      = builtin_schemes[desired_scheme.name]
 if try_scheme then
@@ -48,7 +48,7 @@ config.colors = {
 }
 
 config.font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Regular' }
-config.font_size = 8.5 -- IO/ANSI screen size is 80x24. 7.5 for my screen is 48 lines vim
+config.font_size = 7.5 -- IO/ANSI screen size is 80x24. 7.5 for my screen is 48 lines vim
 
 config.check_for_updates = true
 config.show_update_window = true

@@ -8,3 +8,7 @@ tmux/.config/tmux/tmux.conf.bak.nix
 tmux/.config/tmux/tmux.conf.bak.primeshell
 gtk/.config/gtk-3.0/bookmarks
 jqp
+emacs/.emacs.d/auto-save-list
+emacs/.emacs.d/eln-cache
+emacs/.emacs.d/elpa
+emacs/.emacs.d/tutorial
